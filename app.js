@@ -1,9 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const port = 3000;
 
-const app = express();
-
-app
+express()
   .set('views', 'views');
-  .get('/', (req, res) => {res.send('Hello world')})
-  .listen(port, () => console.log('Listening on port ' + port))
+  get('/', index);
+  listen(port, () => console.log('Listening on port ' + port))
+
+
+function index (req, res) {
+  res.send('Hello world');
+}
