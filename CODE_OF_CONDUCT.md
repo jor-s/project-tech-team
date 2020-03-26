@@ -20,13 +20,13 @@ The use of sexualised language or imagery and unwelcome sexual attention or adva
 # Tools
 The following tools will be used to communicate:
 
-- Whatsapp
+## Whatsapp
 As a project group, we will inform each other about the continuation of our checklist. We will also be discussing assingnments and possibly report something in the group via WhatsApp.
 
-- Discord
+## Discord
 We will make the use of Discord to openly communicate with each other via the call function. Further links to external and internal resources will be shared with each other in the chatroom if neccesary.
 
-- Githhub Projects
+## Githhub Projects
 Assignments and to do lists will be marked in the Github Projects tab. Each 'to do' tab will be marked completed if the standards are met with the requirement.
 
 # Appointments
