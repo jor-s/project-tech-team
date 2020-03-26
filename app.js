@@ -5,6 +5,7 @@ const router = require('./routes/index.js')
 const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
+const session = require('express-session')
 
 app
   .use('/public', express.static('public'))
@@ -13,6 +14,15 @@ app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .listen(port, () => console.log('Listening on port ' + port))
+
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 500000
+    }
+  }))
 
 //connect with database
 mongoose.connect(process.env.MONGODB_URI, {
