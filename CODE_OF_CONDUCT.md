@@ -1,9 +1,7 @@
 # Code Of Conduct
-
 Within this document, agreements are made within the project group, these agreements concern more important matters such as not being present, arriving late, having to leave earlier, not meeting deadlines, other matters that we deem necessary. The contact details of the project members are also noted in this document. The agreements are also made about how the documents should be seen, what the naming should be and with which programs are executed.
 
 # Our Standards
-
 Examples of behaviour that contributes to creating a positive environment include:
 
 - Using welcoming and inclusive language
@@ -20,7 +18,6 @@ The use of sexualised language or imagery and unwelcome sexual attention or adva
 - Other conduct which could reasonably be considered inappropriate in a professional setting
 
 # Tools
-
 The following tools will be used to communicate:
 
 - Whatsapp
@@ -42,7 +39,6 @@ If a project member does not have the opportunity to be present, the project mem
 If a project member is unable to attend the full duration of the work session, he must indicate this on the day of the appointment.
 
 # Special circumstances
-
 In case of special circumstances, as a result of which a project member is unable to be present, the project member reports this as soon as he is aware of this, in the group chat (WhatsApp).
 
 # Deadlines
