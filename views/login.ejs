@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
   <%- include ('./partials/head.ejs') %>
-</head>
 
 <body class="container">
 
-  <header>
     <%- include ('./partials/header.ejs') %>
-  </header>
 
   <main>
 
@@ -20,7 +13,6 @@
         <img src="../static/img/logo.png">
 
         <h1>Login</h1>
-        <%- include ('./partials/messages.ejs') -%>
 
         <form action="/users/login" method="POST">
 
