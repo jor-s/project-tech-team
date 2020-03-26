@@ -1,16 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const profileController = require('../helpers/profile')
 
-router.get('/', (req, res) => {
-  res.render('index.ejs');
-})
+router.get('/', profileController.home)
+router.post('/login', profileController.doLogin)
 
-router.get('/login', (req, res) => {
-  res.render('login.ejs');
-})
-
-router.get('/register', (req, res) => {
-  res.render('register.ejs');
-})
+router.get('/register', profileController.doRegister)
+router.post('/register', profileController.doRegister)
 
 module.exports = router;
