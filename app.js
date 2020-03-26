@@ -7,7 +7,7 @@ const router = require('./routes/index.js')
 const app = express()
 
 express()
-  .use('/public', express.static('static'))
+  .use('/public', express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .use('/', router)
   .set('view engine', 'ejs')
