@@ -1,0 +1,39 @@
+  <%- include ('./partials/head.ejs') %>
+
+<body class="container">
+
+    <%- include ('./partials/header.ejs') %>
+
+  <main>
+
+    <section id="bgLogin">
+
+      <div class="box-login">
+
+        <img src="../static/img/logo.png">
+
+        <h1>Login</h1>
+
+        <form action="/users/login" method="POST">
+
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+          <input type="password" id="password" name="password" class="form-control" placeholder="Wachtwoord" />
+
+          <button type="submit">Login</button>
+
+        </form>
+
+        <div class="box-secondary">
+          <p>Nog geen account?</p>
+          <button><a href="/register">Registreren</a></button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

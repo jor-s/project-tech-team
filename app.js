@@ -2,15 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const port = 3000
 
+const router = require('./routes/index.js')
+
+const app = express()
+
 express()
-  .use('/public', express.static('static'))
+  .use('/public', express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
+  .use('/', router)
   .set('view engine', 'ejs')
   .set('views', 'views')
-  .get('/', index)
   .listen(port, () => console.log('Listening on port ' + port))
-
-
-function index (req, res) {
-  res.send('Hello world')
-}
