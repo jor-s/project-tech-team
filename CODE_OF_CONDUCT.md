@@ -51,3 +51,13 @@ A project member must make every effort at all times to have submitted his part 
 Any form of documentation needs to be submitted as a '.md' file. 
 
 When the documents are made, the maker should note down the Apa references.
+
+# Contact
+contact information of the participants within this project:
+
+|Name|Email|
+|---|---|
+|Azam Awan|azam.awan@hva.nl|
+|Chun Xiao|chun.xiao@hva.nl|
+|Jordy Sahit|jordy.sahit@hva.nl|
+
