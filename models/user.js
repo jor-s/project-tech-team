@@ -8,7 +8,8 @@ let userSchema = new schema({
   password: String,
   date: String,
   preferences: String,
-  hobby: Array
+  hobby: Array,
+  picture: String
 })
 
 let user = mongoose.model('User', userSchema)
