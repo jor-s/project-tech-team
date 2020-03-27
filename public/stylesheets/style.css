@@ -104,6 +104,56 @@ nav ul li button {
 	color: #d61e3a;
 }
 
+.uploadContainer{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.uploadInput{
+	margin-top: 0.5em;
+}
+
+.formContainer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cancelContainer{
+	display: flex;
+
+}
+
+.flexForm{
+	display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
+	border-style: none;
+}
+
+.saveButton{
+	font-size: 1em;
+	background-color:  #d61e3a;
+	padding: 15px 30px 15px 30px;
+	border-style: none;
+	border-radius: 8px;
+	color:white;
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+.cancelButton{
+	font-size: 1em;
+	padding: 15px 30px 15px 30px;
+	border-radius: 8px;
+	border: 1px solid #d61e3a;
+	margin-top: 1em;
+	display: flex;
+	justify-content: flex-start;
+
+}
+
 nav ul li button:hover {
 	color: #fff;
 	background: #d53369;
