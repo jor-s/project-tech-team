@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config()
 const session = require('express-session')
 const port = 3000
 const app = express()
+let db = mongoose.connection
 
 app
   .use('/public', express.static('public'))
@@ -34,7 +35,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: 'true'
 })
 
-var db = mongoose.connection
+
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {
   console.log("DATABASE CONNECTED FOR SURE")
