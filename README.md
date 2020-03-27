@@ -3,7 +3,7 @@ Project Tech: Team - Jordy Sahit, Chun Xiao, Azam Awan
 
 ## Lovr - Where Lovebirds Meet
 
-This is our project for Assignment 2 for project tech within the CMD course. 
+This is our project for Assignment 2 for project tech within the CMD course.
 
 The requirement within Assignment 2 is to create a dating web application in which three job story's are elaborated. We came up with the following job story's:
 
@@ -40,7 +40,24 @@ User is shown a responsive web page
 User can Login / Register (safe)
 There are various NPM packages that would help me to work out my job story. I did preliminary research and placed the chosen NPM packages in a MoSCoW table.
 
+# How to install
 
+1. Open a terminal
 
+2. Clone this repo
+```
+git clone https://github.com/sahitj001/project-tech-team
+```
 
+3. Install node modules
+```
+npm Install
+```
 
+4. Run the application
+```
+npm start
+```
+
+#License
+[MIT](https://github.com/sahitj001/project-tech-team/blob/master/LICENSE)

@@ -8,4 +8,5 @@ router.post('/login', profileController.doLogin)
 router.get('/register', profileController.doRegister)
 router.post('/register', profileController.doRegister)
 
+router.get('/profile', profileController.profile)
 module.exports = router;
