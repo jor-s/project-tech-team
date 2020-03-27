@@ -1,0 +1,49 @@
+<%- include ('partials/head.ejs') %>
+
+<body class="container">
+
+  <%- include ('partials/header.ejs') %>
+
+  <main>
+
+    <section id="main">
+      <h1>Edit profile</h1>
+    </section>
+
+    <section class="formContainer">
+
+      <article>
+        <form action="POST">
+
+          <fieldset class="flexForm">
+
+            <label>What is your name?
+              <input type="text" name="name" required>
+            </label>
+
+            <label class="uploadContainer">Upload your profile picture
+              <input class="uploadInput" type="file" name="picture">
+            </label>
+
+            <a href="/profile" class="saveButton">Save</a>
+          </fieldset>
+
+        </form>
+
+        <div class="cancelContainer">
+          <a href="/profile" class="cancelButton">Cancel</a>
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <%- include ('partials/footer.ejs') %>
+  </footer>
+
+</body>
+
+</html>
