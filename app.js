@@ -1,11 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const port = 3000
 const router = require('./routes/index.js')
-const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const session = require('express-session')
+const port = 3000
+const app = express()
 
 app
   .use('/public', express.static('public'))
@@ -23,6 +23,7 @@ app.use(session({
       maxAge: 500000
     }
   }))
+
 
 //connect with database
 mongoose.connect(process.env.MONGODB_URI, {
