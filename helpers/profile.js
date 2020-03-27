@@ -15,4 +15,8 @@ profileController.doRegister = function(req, res) {
 
 }
 
+profileController.profile = function(req, res) {
+  res.render('profile.ejs')
+}
+
 module.exports = profileController
