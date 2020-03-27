@@ -2,21 +2,25 @@
 
 <body class="container">
 
+    <%- include ('partials/header.ejs') %>
 
-  <%- include ('partials/header.ejs') %>
+<main>
 
+    <section id="main">
+        <h1>dashboard</h1>
+    </section>
 
-  <main>
-
-    <section id="bgLogin">
-
-      <h1>Hoi 'User'</h1>
-
-      <button type="button" name="button">Edit profile</button>
+    <section>
+        <h1 class="mt-4">Profile</h1>
+        <h1>Welkom Chun</h1>
+        <a href="/logout" class="btn btn-secondary">Uitloggen</a>
 
     </section>
 
+</main>
 
-  </main>
+<footer>
+    <%- include ('partials/footer.ejs') %>
+</footer>
 
 </body>
