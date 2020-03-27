@@ -178,9 +178,20 @@ nav ul li button:hover {
 	display: none;
 }
 
+article ul {
+	list-style-type: none;
+}
+
+#profile-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 
 /* Mobile Nav */
 @media (max-width: 858px) {
+
+
 
 	nav {
 		background-color: #d61e3a;

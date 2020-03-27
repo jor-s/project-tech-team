@@ -20,7 +20,7 @@ profileController.goToRegister = function(req, res) {
 }
 
 profileController.doRegister = function(req, res) {
-
+ res.render('register.ejs')
 }
 
 profileController.profile = function(req, res) {
