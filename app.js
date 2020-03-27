@@ -6,9 +6,11 @@ const dotenv = require('dotenv').config()
 const session = require('express-session')
 const port = 3000
 const app = express()
+const bruteforceCheck = require('./config/ratelimiter')
 let db = mongoose.connection
 
   app
+  .use("/login", bruteforceCheck.loginLimiter)
   .use(session({
     secret: process.env.SECRET,
     resave: false,

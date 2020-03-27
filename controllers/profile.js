@@ -9,6 +9,7 @@ profileController.home = function(req, res) {
 }
 
 profileController.logIn = function(req, res) {
+  console.log(req.rateLimit)
   res.render('login.ejs')
 }
 
