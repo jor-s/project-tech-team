@@ -2,21 +2,42 @@
 
 <body class="container">
 
+    <%- include ('partials/profile-header.ejs') %>
 
-  <%- include ('partials/header.ejs') %>
+<main>
 
-
-  <main>
-
-    <section id="bgLogin">
-
-      <h1>Hoi 'User'</h1>
-
-      <button type="button" name="button">Edit profile</button>
-
+    <section id="main">
+        <h1>Welcome user</h1>
     </section>
 
+    <section>
+        <h2>My info</h2>
 
-  </main>
+        <div id="profile-info">
+          <article>
+            <ul>
+              <li>Name:</li>
+              <li>Age:</li>
+              <li>Preferences:</li>
+              <li>Hobby's:</li>
+            </ul>
+          </article>
+
+          <article>
+            <ul>
+              <li>Chun</li>
+              <li>23</li>
+              <li>Women</li>
+              <li>Sport Gaming</li>
+            </ul>
+          </article>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <%- include ('partials/footer.ejs') %>
+</footer>
 
 </body>

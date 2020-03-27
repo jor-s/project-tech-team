@@ -3,6 +3,7 @@ var router = express.Router();
 const profileController = require('../helpers/profile')
 
 router.get('/', profileController.home)
+
 router.get('/login', profileController.logIn)
 router.post('/login', profileController.doLogin)
 

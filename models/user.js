@@ -4,8 +4,11 @@ let schema = mongoose.Schema
 let userSchema = new schema({
   name: String,
   email: String,
+  age: Number,
   password: String,
-  date: String
+  date: String,
+  preferences: String,
+  hobby: Array
 })
 
 let user = mongoose.model('User', userSchema)
