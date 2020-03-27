@@ -8,15 +8,8 @@ const port = 3000
 const app = express()
 let db = mongoose.connection
 
-app
-  .use('/public', express.static('public'))
-  .use(bodyParser.urlencoded({extended: true}))
-  .use('/', router)
-  .set('view engine', 'ejs')
-  .set('views', 'views')
-  .listen(port, () => console.log('Listening on port ' + port))
-
-app.use(session({
+  app
+  .use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
@@ -24,7 +17,12 @@ app.use(session({
       maxAge: 500000
     }
   }))
-
+  .use('/public', express.static('public'))
+  .use(bodyParser.urlencoded({extended: true}))
+  .use('/', router)
+  .set('view engine', 'ejs')
+  .set('views', 'views')
+  .listen(port, () => console.log('Listening on port ' + port))
 
 //connect with database
 mongoose.connect(process.env.MONGODB_URI, {

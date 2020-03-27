@@ -4,6 +4,7 @@ const schema = require('../models/user')
 let profileController={}
 
 profileController.home = function(req, res) {
+  console.log(req.session)
   res.render('index.ejs')
 }
 
