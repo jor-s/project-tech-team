@@ -7,6 +7,7 @@ const session = require('express-session')
 const port = 3000
 const app = express()
 const bruteforceCheck = require('./config/ratelimiter')
+const passport = require('./config/passport')
 let db = mongoose.connection
 
   app
@@ -19,6 +20,8 @@ let db = mongoose.connection
       maxAge: 500000
     }
   }))
+  .use(passport.initialize())
+  .use(passport.session())
   .use('/public', express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .use('/', router)
@@ -34,7 +37,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: 'true',
   useCreateIndex: 'true'
 })
-
 
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {

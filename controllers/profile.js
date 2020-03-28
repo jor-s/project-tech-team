@@ -14,23 +14,31 @@ profileController.logIn = function(req, res) {
 }
 
 profileController.doLogin = function(req, res) {
-
+  res.redirect('profile')
 }
 
 profileController.goToRegister = function(req, res) {
-  res.render('register.ejs')
+ res.render('register.ejs')
 }
 
 profileController.doRegister = function(req, res) {
-
+  res.render('register.ejs')
 }
 
 profileController.profile = function(req, res) {
+  if(req.user){
   res.render('profile.ejs')
+  } else{
+    res.redirect('/login')
+  }
 }
 
 profileController.goToEdit = function(req, res) {
-  res.render('edit-profile.ejs')
+  if(req.user){
+    res.render('edit-profile.ejs')
+    } else{
+      res.redirect('/login')
+    }
 }
 
 profileController.doEdit = function(req, res) {
