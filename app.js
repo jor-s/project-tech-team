@@ -6,24 +6,29 @@ const dotenv = require('dotenv').config()
 const session = require('express-session')
 const port = 3000
 const app = express()
+const passport = require('./config/passport')
 let db = mongoose.connection
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 500000 //500 seconds
+  }
+}))
+.use(passport.initialize())
+.use(passport.session())
 
 app
   .use('/public', express.static('public'))
-  .use(bodyParser.urlencoded({extended: true}))
+  .use(bodyParser.urlencoded({
+    extended: true
+  }))
   .use('/', router)
   .set('view engine', 'ejs')
   .set('views', 'views')
   .listen(port, () => console.log('Listening on port ' + port))
-
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 500000
-    }
-  }))
 
 
 //connect with database
