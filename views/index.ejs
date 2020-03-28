@@ -1,8 +1,8 @@
-<%- include ('partials/head.ejs') %>
+<%- include('partials/head'); -%>
 
 
 <body class="container">
-  <%- include ('partials/header.ejs') %>
+  <%- include('partials/header'); -%>
 
   <main>
 
@@ -14,7 +14,8 @@
 
       <p>Waarom ingewikkeld? Maak daten lekker makkelijk met Lovr!</p>
 
-      <button onclick="location.href='register'" type="button">Aanmelden</button>
+      <button onclick="location.href='/users/login'" type="button">Login</button>
+      <button onclick="location.href='/users/register'" type="button">Aanmelden</button>
 
     </section>
 

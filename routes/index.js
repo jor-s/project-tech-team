@@ -1,18 +1,22 @@
-var express = require('express');
-var router = express.Router();
-const profileController = require('../helpers/profile')
+const express = require('express');
+const router = express.Router();
 
-router.get('/', profileController.home)
+const { ensureAuthenticated, forwardAuthenticated } = require('../helpers/auth');
 
-router.get('/login', profileController.logIn)
-router.post('/login', profileController.doLogin)
+// Welcome Page
+router.get('/', forwardAuthenticated, (req, res) => res.render('index'));
 
-router.get('/register', profileController.goToRegister)
-router.post('/register', profileController.doRegister)
+// Dashboard
+router.get('/dashboard', ensureAuthenticated, (req, res) =>
+  res.render('dashboard', {
+    user: req.user
+  })
+);
 
-router.get('/profile', profileController.profile)
 
-router.get('/edit-profile', profileController.goToEdit)
-router.post('/edit-profile', profileController.doEdit)
+
+// profile controler doet hier heel raar :/
+
+
 
 module.exports = router;

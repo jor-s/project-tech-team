@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head'); -%>
+</head>
+
+<body class="container">
+
+    <header>
+      <%- include('partials/header'); -%>
+    </header>
+
+    <main>
+
+        <section id="main">
+            <h1>My Account</h1>
+        </section>
+
+        <section>
+            <h2>Welkom <%= user.name %></h2>
+            <a href="/users/logout" class="btn btn-secondary">Uitloggen</a>
+        </section>
+
+    </main>
+
+    <footer>
+      <%- include('partials/footer'); -%>
+    </footer>
+
+</body>
+
+</html>

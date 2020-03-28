@@ -104,56 +104,6 @@ nav ul li button {
 	color: #d61e3a;
 }
 
-.uploadContainer{
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.uploadInput{
-	margin-top: 0.5em;
-}
-
-.formContainer{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.cancelContainer{
-	display: flex;
-
-}
-
-.flexForm{
-	display: flex;
-  flex-direction: column;
-	flex-wrap: wrap;
-	border-style: none;
-}
-
-.saveButton{
-	font-size: 1em;
-	background-color:  #d61e3a;
-	padding: 15px 30px 15px 30px;
-	border-style: none;
-	border-radius: 8px;
-	color:white;
-	text-align: center;
-	margin-top: 1.5em;
-}
-
-.cancelButton{
-	font-size: 1em;
-	padding: 15px 30px 15px 30px;
-	border-radius: 8px;
-	border: 1px solid #d61e3a;
-	margin-top: 1em;
-	display: flex;
-	justify-content: flex-start;
-
-}
-
 nav ul li button:hover {
 	color: #fff;
 	background: #d53369;
@@ -178,20 +128,9 @@ nav ul li button:hover {
 	display: none;
 }
 
-article ul {
-	list-style-type: none;
-}
-
-#profile-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
 
 /* Mobile Nav */
 @media (max-width: 858px) {
-
-
 
 	nav {
 		background-color: #d61e3a;
@@ -285,7 +224,7 @@ article ul {
 *********************/
 
 #main {
-	min-height: 75vh;
+	min-height: 25vh;
 	margin: 0vw 0vw 0vw 0vw;
 	background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('../img/slider1.jpg');
 	background-position: center center;
@@ -298,7 +237,7 @@ article ul {
 	text-align: center;
 	font-size: 7em;
 	color: #fff;
-	padding-top: 20vh;
+	padding-top: 0vh;
 }
 
 /* index/home slider*/
