@@ -1,7 +1,9 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 const profileController = require('../controllers/profile')
 const passport = require('passport')
+
+
 
 router.get('/', profileController.home)
 

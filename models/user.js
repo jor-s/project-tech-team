@@ -9,7 +9,8 @@ let userSchema = new schema({
   date: String,
   preferences: String,
   hobby: Array,
-  picture: String
+  picture: String,
+  pickupline: String
 })
 
 let user = mongoose.model('User', userSchema)

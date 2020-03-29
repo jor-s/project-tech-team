@@ -6,30 +6,28 @@ const dotenv = require('dotenv').config()
 const session = require('express-session')
 const port = 3000
 const app = express()
+const bruteforceCheck = require('./config/ratelimiter')
 const passport = require('./config/passport')
 let db = mongoose.connection
 
-app.use(session({
-  secret: process.env.SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 500000 //500 seconds
-  }
-}))
-.use(passport.initialize())
-.use(passport.session())
-
-app
-  .use('/public', express.static('public'))
-  .use(bodyParser.urlencoded({
-    extended: true
+  app
+  .use("/login", bruteforceCheck.loginLimiter)
+  .use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 500000
+    }
   }))
+  .use(passport.initialize())
+  .use(passport.session())
+  .use('/public', express.static('public'))
+  .use(bodyParser.urlencoded({extended: true}))
   .use('/', router)
   .set('view engine', 'ejs')
   .set('views', 'views')
   .listen(port, () => console.log('Listening on port ' + port))
-
 
 //connect with database
 mongoose.connect(process.env.MONGODB_URI, {
@@ -39,7 +37,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: 'true',
   useCreateIndex: 'true'
 })
-
 
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {

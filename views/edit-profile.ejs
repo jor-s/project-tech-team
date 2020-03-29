@@ -13,7 +13,7 @@
     <section class="formContainer">
 
       <article>
-        <form action="POST">
+        <form action="/edit-profile" method="POST">
 
           <fieldset class="flexForm">
 
@@ -21,11 +21,19 @@
               <input type="text" name="name" required>
             </label>
 
+            <label>What is your pickup line?
+              <input type="text" name="pickupText">
+            </label>
+
+            <label>If you can't think about one, you can choose for a random one
+              <input type="checkbox" name="pickupBox">
+            </label>
+
             <label class="uploadContainer">Upload your profile picture
               <input class="uploadInput" type="file" name="picture">
             </label>
 
-            <a href="/profile" class="saveButton">Save</a>
+            <button type="submit" class="saveButton">Save</button>
           </fieldset>
 
         </form>
