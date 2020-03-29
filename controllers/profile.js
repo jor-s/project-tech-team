@@ -67,9 +67,10 @@ profileController.doEdit = function (req, res) {
         //taking the list of json pickuplines and putting them in a variable
         let pickupLines = json
         //here I choose which pickupline I want to use. the list consists out of an array so I picked an object within that array
-        //TODO add random picker for array
-        //console.log(pickupLines.length)
-        let myLine = pickupLines[4]
+        //random picker for array
+        console.log('pickupline length is: ', pickupLines.length)
+        let randomLine = Math.floor(Math.random() * pickupLines.length - 1);
+        let myLine = pickupLines[randomLine]
         //here I take the key value from the object. tweet is the pickupline from that object
         let temp = myLine.tweet
         console.log('pickupline is ', temp)
