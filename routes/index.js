@@ -3,6 +3,8 @@ var router = express.Router()
 const profileController = require('../controllers/profile')
 const passport = require('passport')
 
+
+
 router.get('/', profileController.home)
 
 router.get('/login', profileController.logIn)
