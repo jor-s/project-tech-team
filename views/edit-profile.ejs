@@ -13,7 +13,7 @@
     <section class="formContainer">
 
       <article>
-        <form action="/edit-profile" method="POST">
+        <form action="/edit-profile" method="POST" enctype="multipart/form-data">
 
           <fieldset class="flexForm">
 
@@ -21,16 +21,28 @@
               <input type="text" name="name" required>
             </label>
 
+            <label class="flexAge">What is your age.
+              <input type="number" name="age" class="pickupCheckbox" required >
+            </label>
+
+            <label>Which gender do you prefer?
+              <input type="text" name="genderPreference" required>
+            </label>
+
             <label>What is your pickup line?
               <input type="text" name="pickupText">
             </label>
 
-            <label>If you can't think about one, you can choose for a random one
-              <input type="checkbox" name="pickupBox">
+            <label class="flexForm">If you can't think about one, you can choose for a random one. Check this box if you want one.
+              <input type="checkbox" name="pickupBox" class="pickupCheckbox">
             </label>
 
-            <label class="uploadContainer">Upload your profile picture
-              <input class="uploadInput" type="file" name="picture">
+            <label>Do you have any hobbies?
+              <input type="text" name="hobby">
+            </label>
+
+            <label class="uploadContainer">Upload your profile picture.
+              <input class="uploadInput" type="file" name="picture" required>
             </label>
 
             <button type="submit" class="saveButton">Save</button>

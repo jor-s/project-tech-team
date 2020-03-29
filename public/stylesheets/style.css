@@ -132,6 +132,21 @@ nav ul li button {
 	border-style: none;
 }
 
+.pickupCheckbox{
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+
+}
+
+.flexAge{
+	display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
+	border-style: none;
+}
+
 .saveButton{
 	font-size: 1em;
 	background-color:  #d61e3a;
@@ -563,3 +578,4 @@ input[type=text],
 .closebtn:hover {
 	color: black;
 }
+

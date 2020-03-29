@@ -45,12 +45,18 @@ profileController.goToEdit = function (req, res) {
 }
 
 profileController.doEdit = function (req, res) {
-    //if checkbox has been checked, connect to api to choose random pickupline
-    let randomCheck = req.body.pickupBox
-    let name = req.body.name
-    console.log(req.body.pickupBox)
+  let filePath = req.file.path
+  let randomCheck = req.body.pickupBox
+  let name = req.body.name
+  let userId = req.user.id
+  let userAge = req.body.age
+  let userPreference = req.body.genderPreference
+  let userHobby = req.body.hobby
 
-    if(randomCheck){
+  console.log('checkbox is: ', req.body.pickupBox)
+
+  //if checkbox has been checked, connect to api to choose random pickupline
+  if (randomCheck) {
     //make connection with API
     fetch(api_url)
       .then(function (response) {
@@ -69,11 +75,15 @@ profileController.doEdit = function (req, res) {
         console.log('pickupline is ', temp)
 
         schema.findOneAndUpdate({
-          _id: req.user.id
+          _id: userId
         }, {
           $set: {
             pickupline: temp,
-            name: name
+            name: name,
+            picture: filePath,
+            age: userAge,
+            preferences: userPreference,
+            hobby: userHobby
           }
         }, {
           useFineAndModify: false
@@ -94,29 +104,31 @@ profileController.doEdit = function (req, res) {
           console.log(err)
         }
       })
+  } else {
+    console.log('checkbox not ticked')
+    let sentence = req.body.pickupText
+    schema.findOneAndUpdate({
+      _id: userId
+    }, {
+      $set: {
+        pickupline: sentence,
+        name: name,
+        picture: filePath,
+        age: userAge,
+        preferences: userPreference,
+        hobby: userHobby
+      }
+    }, {
+      useFineAndModify: false
+    }, function (err) {
+      if (err) {
+        console.log('something went wrong when i tried to update: ', err)
+      } else {
+        console.log('account has been updated without checkbox tick')
+        res.render('profile')
+      }
+    })
   }
-    else{
-      console.log('checkbox not ticked')
-      let sentence = req.body.pickupText
-      schema.findOneAndUpdate({
-        _id: req.user.id
-      }, {
-        $set: {
-          pickupline: sentence,
-          name: name
-        }
-      }, {
-        useFineAndModify: false
-      }, function (err) {
-        if (err) {
-          console.log('something went wrong when i tried to update: ', err)
-        } else {
-          console.log('account has been updated without checkbox tick')
-          res.render('profile')
-        }
-      })
-    }
-
 }
 
 
