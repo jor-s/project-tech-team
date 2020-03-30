@@ -3,14 +3,12 @@ var router = express.Router()
 const profileController = require('../controllers/profile')
 const passport = require('passport')
 const imageController = require('../config/multer')
-
+const bruteforceCheck = require("../config/ratelimiter")
 
 router.get('/', profileController.home)
 
 router.get('/login', profileController.logIn)
-router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/login'
-}), profileController.doLogin)
+router.post('/login', bruteforceCheck.loginLimiter, profileController.doLogin, passport.authenticate('local', {failureRedirect: '/login'}))
 
 router.get('/register', profileController.goToRegister)
 router.post('/register', profileController.doRegister)
