@@ -1,14 +1,11 @@
 const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
-<<<<<<< HEAD
-=======
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 
 const saltRounds = 10;
 
->>>>>>> e355b18fd24ebd2fa4f351ba84e5cdcf3ba63af3
 let profileController = {}
 
 profileController.home = function(req, res) {
@@ -20,14 +17,9 @@ profileController.logIn = function(req, res) {
   res.render('login.ejs')
 }
 
-<<<<<<< HEAD
-profileController.doLogin = function (req, res, ) {
-
-=======
 profileController.doLogin = function(req, res, ) {
   console.log(req.rateLimit)
->>>>>>> e355b18fd24ebd2fa4f351ba84e5cdcf3ba63af3
-  res.redirect('profile')
+  res.render('profile.ejs')
 }
 
 profileController.goToRegister = function(req, res) {
