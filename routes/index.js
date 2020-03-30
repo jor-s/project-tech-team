@@ -3,7 +3,7 @@ var router = express.Router()
 const profileController = require('../controllers/profile')
 const passport = require('passport')
 const imageController = require('../config/multer')
-const bruteforceCheck = require("../config/ratelimiter")
+const bruteforceCheck = require('../config/ratelimiter')
 
 router.get('/', profileController.home)
 
