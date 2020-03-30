@@ -2,6 +2,7 @@ const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
 const bcrypt = require('bcrypt')
+const express-validator = require('express-validator')
 
 const saltRounds = 10;
 
@@ -13,7 +14,6 @@ profileController.home = function(req, res) {
 }
 
 profileController.logIn = function(req, res) {
-
   res.render('login.ejs')
 }
 
@@ -27,11 +27,10 @@ profileController.goToRegister = function(req, res) {
 }
 
 profileController.doRegister = function(req, res) {
-
   let password = req.body.password;
 
-  bcrypt.genSalt(saltRounds, (err, salt) => {
-    bcrypt.hash(password, salt,(err, hash) => {
+  bcrypt.genSalt(saltRounds, (err, salt) => { //generate sal rounds
+    bcrypt.hash(password, salt,(err, hash) => { //Hash the password from req.body.password
 
       let item = new schema({
         name: req.body.name,
@@ -48,22 +47,17 @@ profileController.doRegister = function(req, res) {
           res.render('login')
         }
       })
-
     })
   })
-
-
 }
 
 profileController.profile = function(req, res) {
-
   if (req.user) {
     res.render('profile.ejs')
   } else {
     res.redirect('login')
   }
 }
-
 
 profileController.goToEdit = function(req, res) {
   if (req.user) {
@@ -160,8 +154,5 @@ profileController.doEdit = function(req, res) {
     })
   }
 }
-
-
-
 
 module.exports = profileController
