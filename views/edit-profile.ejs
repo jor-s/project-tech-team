@@ -1,0 +1,69 @@
+<%- include ('partials/head.ejs') %>
+
+<body class="container">
+
+  <%- include ('partials/header.ejs') %>
+
+  <main>
+
+    <section id="main">
+      <h1>Edit profile</h1>
+    </section>
+
+    <section class="formContainer">
+
+      <article>
+        <form action="/edit-profile" method="POST" enctype="multipart/form-data">
+
+          <fieldset class="flexForm">
+
+            <label>What is your name?
+              <input type="text" name="name" required>
+            </label>
+
+            <label class="flexAge">What is your age.
+              <input type="number" name="age" class="pickupCheckbox" required >
+            </label>
+
+            <label>Which gender do you prefer?
+              <input type="text" name="genderPreference" required>
+            </label>
+
+            <label>What is your pickup line?
+              <input type="text" name="pickupText">
+            </label>
+
+            <label class="flexForm">If you can't think about one, you can choose for a random one. Check this box if you want one.
+              <input type="checkbox" name="pickupBox" class="pickupCheckbox">
+            </label>
+
+            <label>Do you have any hobbies?
+              <input type="text" name="hobby">
+            </label>
+
+            <label class="uploadContainer">Upload your profile picture.
+              <input class="uploadInput" type="file" name="picture" required>
+            </label>
+
+            <button type="submit" class="saveButton">Save</button>
+          </fieldset>
+
+        </form>
+
+        <div class="cancelContainer">
+          <a href="/profile" class="cancelButton">Cancel</a>
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <%- include ('partials/footer.ejs') %>
+  </footer>
+
+</body>
+
+</html>

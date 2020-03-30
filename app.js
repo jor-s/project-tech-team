@@ -1,21 +1,18 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const port = 3000
 const router = require('./routes/index.js')
-const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const session = require('express-session')
+const bcrypt = require('bcrypt')
+const validator = require('express-validator')
+const passport = require('./config/passport')
+const port = 3000
+const app = express()
+let db = mongoose.connection
 
-app
-  .use('/public', express.static('public'))
-  .use(bodyParser.urlencoded({extended: true}))
-  .use('/', router)
-  .set('view engine', 'ejs')
-  .set('views', 'views')
-  .listen(port, () => console.log('Listening on port ' + port))
-
-app.use(session({
+  app
+  .use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
@@ -23,6 +20,14 @@ app.use(session({
       maxAge: 500000
     }
   }))
+  .use(passport.initialize())
+  .use(passport.session())
+  .use('/public', express.static('public'))
+  .use(bodyParser.urlencoded({extended: true}))
+  .use('/', router)
+  .set('view engine', 'ejs')
+  .set('views', 'views')
+  .listen(port, () => console.log('Listening on port ' + port))
 
 //connect with database
 mongoose.connect(process.env.MONGODB_URI, {
@@ -33,7 +38,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: 'true'
 })
 
-var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {
   console.log("DATABASE CONNECTED FOR SURE")
