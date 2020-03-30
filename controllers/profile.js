@@ -1,7 +1,6 @@
 const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
-
 let profileController = {}
 
 profileController.home = function (req, res) {
@@ -15,7 +14,7 @@ profileController.logIn = function (req, res) {
 }
 
 profileController.doLogin = function (req, res, ) {
-  console.log(req.rateLimit)
+
   res.redirect('profile')
 }
 
