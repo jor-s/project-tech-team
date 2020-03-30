@@ -10,6 +10,8 @@ router.get('/', profileController.home)
 router.get('/login', profileController.logIn)
 router.post('/login', bruteforceCheck.loginLimiter, profileController.doLogin, passport.authenticate('local', {failureRedirect: '/login'}))
 
+router.get('/profile', profileController.doLogin)
+
 router.get('/register', profileController.goToRegister)
 router.post('/register', profileController.doRegister)
 

@@ -2,7 +2,7 @@ const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
 const bcrypt = require('bcrypt')
-const express-validator = require('express-validator')
+const validator = require('express-validator')
 
 const saltRounds = 10;
 
@@ -29,7 +29,7 @@ profileController.goToRegister = function(req, res) {
 profileController.doRegister = function(req, res) {
   let password = req.body.password;
 
-  bcrypt.genSalt(saltRounds, (err, salt) => { //generate sal rounds
+  bcrypt.genSalt(saltRounds, (err, salt) => { //generate salt rounds
     bcrypt.hash(password, salt,(err, hash) => { //Hash the password from req.body.password
 
       let item = new schema({
