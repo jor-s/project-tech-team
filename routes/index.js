@@ -13,9 +13,11 @@ router.post('/login', bruteforceCheck.loginLimiter, passport.authenticate('local
 router.get('/register', profileController.goToRegister)
 router.post('/register', profileController.doRegister)
 
-router.get('/profile', profileController.profile)
+router.get('/profile', profileController.userProfile)
 
 router.get('/edit-profile', profileController.goToEdit)
 router.post('/edit-profile', imageController.upload.single('picture'), profileController.doEdit)
+
+router.get('/logout', profileController.logOut)
 
 module.exports = router;
