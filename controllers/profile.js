@@ -1,6 +1,9 @@
 const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10;
 
 let profileController = {}
 
@@ -24,21 +27,32 @@ profileController.goToRegister = function(req, res) {
 }
 
 profileController.doRegister = function(req, res) {
-  let item = new schema({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  })
-  item.save((err) => {
-    if (err) {
-      return handleError(err)
 
-    } else {
-      console.log('registerd info: ' + item)
-      console.log('has been added')
-      res.render('login')
-    }
+  let password = req.body.password;
+
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    bcrypt.hash(password, salt,(err, hash) => {
+
+      let item = new schema({
+        name: req.body.name,
+        email: req.body.email,
+        password: hash
+      })
+
+      item.save((err) => {
+        if (err) {
+          return err(err)
+        } else {
+          console.log('registerd info: ' + item)
+          console.log('has been added')
+          res.render('login')
+        }
+      })
+
+    })
   })
+
+
 }
 
 profileController.profile = function(req, res) {
