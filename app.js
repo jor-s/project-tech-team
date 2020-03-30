@@ -4,9 +4,11 @@ const router = require('./routes/index.js')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const session = require('express-session')
+const bcrypt = require('bcrypt')
+const validator = require('express-validator')
+const passport = require('./config/passport')
 const port = 3000
 const app = express()
-const passport = require('./config/passport')
 let db = mongoose.connection
 
   app
