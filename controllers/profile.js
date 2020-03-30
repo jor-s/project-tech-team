@@ -1,33 +1,65 @@
 const schema = require('../models/user')
 const fetch = require("node-fetch");
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
+<<<<<<< HEAD
+=======
+const bcrypt = require('bcrypt')
+const validator = require('express-validator')
+
+const saltRounds = 10;
+
+>>>>>>> e355b18fd24ebd2fa4f351ba84e5cdcf3ba63af3
 let profileController = {}
 
-profileController.home = function (req, res) {
+profileController.home = function(req, res) {
   console.log(req.session)
   res.render('index.ejs')
 }
 
-profileController.logIn = function (req, res) {
-
+profileController.logIn = function(req, res) {
   res.render('login.ejs')
 }
 
+<<<<<<< HEAD
 profileController.doLogin = function (req, res, ) {
 
+=======
+profileController.doLogin = function(req, res, ) {
+  console.log(req.rateLimit)
+>>>>>>> e355b18fd24ebd2fa4f351ba84e5cdcf3ba63af3
   res.redirect('profile')
 }
 
-profileController.goToRegister = function (req, res) {
+profileController.goToRegister = function(req, res) {
   res.render('register.ejs')
 }
 
-profileController.doRegister = function (req, res) {
-  res.render('register.ejs')
+profileController.doRegister = function(req, res) {
+  let password = req.body.password;
+
+  bcrypt.genSalt(saltRounds, (err, salt) => { //generate salt rounds
+    bcrypt.hash(password, salt,(err, hash) => { //Hash the password from req.body.password
+
+      let item = new schema({
+        name: req.body.name,
+        email: req.body.email,
+        password: hash
+      })
+
+      item.save((err) => {
+        if (err) {
+          return err(err)
+        } else {
+          console.log('registerd info: ' + item)
+          console.log('has been added')
+          res.render('login')
+        }
+      })
+    })
+  })
 }
 
-profileController.profile = function (req, res) {
-
+profileController.profile = function(req, res) {
   if (req.user) {
     res.render('profile.ejs')
   } else {
@@ -35,8 +67,7 @@ profileController.profile = function (req, res) {
   }
 }
 
-
-profileController.goToEdit = function (req, res) {
+profileController.goToEdit = function(req, res) {
   if (req.user) {
     res.render('edit-profile.ejs')
   } else {
@@ -44,7 +75,7 @@ profileController.goToEdit = function (req, res) {
   }
 }
 
-profileController.doEdit = function (req, res) {
+profileController.doEdit = function(req, res) {
   let filePath = req.file.path
   let randomCheck = req.body.pickupBox
   let name = req.body.name
@@ -59,11 +90,11 @@ profileController.doEdit = function (req, res) {
   if (randomCheck) {
     //make connection with API
     fetch(api_url)
-      .then(function (response) {
+      .then(function(response) {
         // console.log(response)
         return response.json()
       })
-      .then(function (json) {
+      .then(function(json) {
         //taking the list of json pickuplines and putting them in a variable
         let pickupLines = json
         //here I choose which pickupline I want to use. the list consists out of an array so I picked an object within that array
@@ -88,7 +119,7 @@ profileController.doEdit = function (req, res) {
           }
         }, {
           useFineAndModify: false
-        }, function (err) {
+        }, function(err) {
           if (err) {
             console.log('something went wrong when i tried to update: ', err)
           } else {
@@ -100,7 +131,7 @@ profileController.doEdit = function (req, res) {
         })
         return temp
       })
-      .catch(function (err) {
+      .catch(function(err) {
         if (err) {
           console.log(err)
         }
@@ -121,7 +152,7 @@ profileController.doEdit = function (req, res) {
       }
     }, {
       useFineAndModify: false
-    }, function (err) {
+    }, function(err) {
       if (err) {
         console.log('something went wrong when i tried to update: ', err)
       } else {
@@ -131,8 +162,5 @@ profileController.doEdit = function (req, res) {
     })
   }
 }
-
-
-
 
 module.exports = profileController
