@@ -10,9 +10,20 @@ let userSchema = new schema({
   preferences: String,
   hobby: Array,
   picture: String,
-  pickupline: String
+  pickupline: String,
+  likes: {
+      type: [schema.Types.ObjectId],
+      ref: 'User',
+      autopopulate: true
+    },
+    dislikes: {
+      type: [schema.Types.ObjectId],
+      ref: 'User',
+      autopopulate: true
+    }
 })
 
 let user = mongoose.model('User', userSchema)
 
 module.exports = user
+

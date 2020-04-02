@@ -20,4 +20,7 @@ router.post('/edit-profile', imageController.upload.single('picture'), profileCo
 
 router.get('/logout', profileController.logOut)
 
+router.use('/recs', require('./recs'));
+
+
 module.exports = router;

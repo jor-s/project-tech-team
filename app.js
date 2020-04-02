@@ -7,7 +7,7 @@ const session = require('express-session')
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 const passport = require('./config/passport')
-const port = 3000
+const port = 4000
 const app = express()
 let db = mongoose.connection
 
