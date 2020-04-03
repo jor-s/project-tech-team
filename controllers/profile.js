@@ -156,5 +156,4 @@ profileController.doEdit = function(req, res) {
     })
   }
 }
-
 module.exports = profileController
