@@ -21,7 +21,7 @@ let userSchema = new schema({
       ref: 'User',
       autopopulate: true
     }
-})
+  })
 
 let user = mongoose.model('User', userSchema)
 

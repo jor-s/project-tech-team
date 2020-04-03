@@ -1,10 +1,15 @@
-  <%- include ('./partials/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <%- include ('./partials/head.ejs') %>
+</head>
 
 <body class="container">
 
-
+  <header>
     <%- include ('./partials/header.ejs') %>
+  </header>
 
   <main>
 
@@ -14,7 +19,7 @@
 
         <img src="../static/img/logo.png">
 
-        <h1>Registreren</h1>
+        <h1> Registreren</h1>
 
         <form action="/register" method="POST">
 
@@ -31,7 +36,7 @@
           <input type="password" id="password2" name="password2" class="form-control" placeholder="Herhaal Wachtwoord"
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
 
-          <button type="submit" name="Submit" >Register</button>
+          <button type="submit">Register</button>
 
         </form>
 

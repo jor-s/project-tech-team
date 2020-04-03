@@ -7,6 +7,7 @@ const session = require('express-session')
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 const passport = require('./config/passport')
+const flash = require('connect-flash');
 const port = 3000
 const app = express()
 let db = mongoose.connection
@@ -38,7 +39,24 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: 'true'
 })
 
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+
+
+
+
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {
   console.log("DATABASE CONNECTED FOR SURE")
 })
+

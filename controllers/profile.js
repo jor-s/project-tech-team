@@ -17,16 +17,6 @@ profileController.logIn = function(req, res) {
   res.render('login.ejs')
 }
 
-profileController.userProfile = function(req, res) {
-  if(req.user) {
-    res.render('profile.ejs', {
-      name: req.user.name
-    })
-  } else {
-    res.redirect('/login')
-  }
-}
-
 profileController.doLogin = function(req, res, ) {
   console.log(req.rateLimit)
   res.redirect('/profile')
@@ -63,9 +53,11 @@ profileController.doRegister = function(req, res) {
 
 profileController.profile = function(req, res) {
   if (req.user) {
-    res.render('profile.ejs')
+    res.render('profile.ejs', {
+      name: req.user.name
+    })
   } else {
-    res.redirect('login')
+    res.redirect('/login')
   }
 }
 
@@ -164,10 +156,4 @@ profileController.doEdit = function(req, res) {
     })
   }
 }
-
-profileController.logOut = function (req, res) {
-  req.logout()
-  res.redirect('/')
-}
-
 module.exports = profileController

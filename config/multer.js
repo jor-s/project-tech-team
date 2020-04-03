@@ -31,3 +31,9 @@ imageHelper.upload = multer({
 })
 
 module.exports = imageHelper;
+
+  }
+})
+
+module.exports = imageHelper;
+
