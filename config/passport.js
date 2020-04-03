@@ -21,8 +21,9 @@ passport.use(new LocalStrategy( {usernameField: 'email'},
 ))
 
 
-passport.serializeUser(function (user, done) {
-  console.log('serializing: ' + user.id)))
+passport.serializeUser( (user, done) => {
+  done(null, user.id);
+  });
 
 // module.exports = {
 //   ensureAuthenticated: function(req, res, next) {
