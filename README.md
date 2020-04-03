@@ -1,5 +1,5 @@
 # project-tech-team
-Project Tech: Team - Jordy Sahit, Chun Xiao, Azam Awan
+Project Tech: Team - Jordy Sahit, Chun Xiao, Azam Awan and Giovanni Dwidjosewojo
 
 ## Lovr - Where Lovebirds Meet
 
