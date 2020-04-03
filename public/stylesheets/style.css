@@ -1,6 +1,5 @@
 /*
 Table of context
-
 	- Base code
 	- Navigation
 	- Header
@@ -43,6 +42,18 @@ img {
 
 h2 {
 	font-size: 3em;
+}
+
+section button {
+	font-size: 1em;
+	text-transform: uppercase;
+
+	padding: 15px 30px 15px 30px;
+	margin-right: 50px;
+	border-style: none;
+	border-radius: 8px;
+
+	color: #d61e3a;
 }
 
 
@@ -578,4 +589,3 @@ input[type=text],
 .closebtn:hover {
 	color: black;
 }
-
