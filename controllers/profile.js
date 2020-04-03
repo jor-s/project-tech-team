@@ -17,7 +17,7 @@ profileController.logIn = function(req, res) {
   res.render('login.ejs')
 }
 
-profileController.doLogin = function(req, res, ) {
+profileController.doLogin = function(req, res) {
   console.log(req.rateLimit)
   res.redirect('/profile')
 }

@@ -28,4 +28,3 @@ router.post('/edit-profile', imageController.upload.single('picture'), profileCo
 router.use('/recs', require('./recs'));
 
 module.exports = router;
-

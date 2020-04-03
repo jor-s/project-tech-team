@@ -26,4 +26,3 @@ let userSchema = new schema({
 let user = mongoose.model('User', userSchema)
 
 module.exports = user
-

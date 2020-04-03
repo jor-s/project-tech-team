@@ -1,14 +1,12 @@
 User = require('../models/user')
-
-
 exports.users = async (req, res) => {
-    const thisUser = req.user;
-    let users = await findUsers(thisUser);
-    console.log(users);
-res.render('recs',{
-    user:req.user,
-    users: users
-})
+  const thisUser = req.user;
+  let users = await findUsers(thisUser);
+  console.log(users);
+  res.render('recs',{
+      user:req.user,
+      users: users
+  })
 };
 exports.vote = async (req, res, next) => {
   const id = req.params.id;
@@ -75,5 +73,3 @@ let dislike = (userID, voteID) => {
     }
   });
 };
-
-
