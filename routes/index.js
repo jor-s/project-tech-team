@@ -10,7 +10,6 @@ router.get('/', profileController.home)
 router.get('/login', profileController.logIn)
 router.post('/login', bruteforceCheck.loginLimiter, passport.authenticate('local', {  failureRedirect: '/login'}), profileController.doLogin)
 
-
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();
