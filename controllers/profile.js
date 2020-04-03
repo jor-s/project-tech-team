@@ -19,7 +19,7 @@ profileController.logIn = function(req, res) {
 
 profileController.doLogin = function(req, res, ) {
   console.log(req.rateLimit)
-  res.render('profile.ejs')
+  res.redirect('/profile')
 }
 
 profileController.goToRegister = function(req, res) {
@@ -53,9 +53,11 @@ profileController.doRegister = function(req, res) {
 
 profileController.profile = function(req, res) {
   if (req.user) {
-    res.render('profile.ejs')
+    res.render('profile.ejs', {
+      name: req.user.name
+    })
   } else {
-    res.redirect('login')
+    res.redirect('/login')
   }
 }
 
