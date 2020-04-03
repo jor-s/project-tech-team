@@ -17,10 +17,8 @@ router.get('/profile', profileController.userProfile)
 
 router.get('/edit-profile', profileController.goToEdit)
 router.post('/edit-profile', imageController.upload.single('picture'), profileController.doEdit)
-
 router.get('/logout', profileController.logOut)
 
 router.use('/recs', require('./recs'));
-
 
 module.exports = router;
