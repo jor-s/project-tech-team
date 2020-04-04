@@ -1,0 +1,44 @@
+<%- include ('partials/head.ejs') %>
+
+<body class="container">
+
+    <%- include ('partials/profile-header.ejs') %>
+
+<main>
+
+    <section id="main">
+        <h1>Welcome user</h1>
+    </section>
+
+    <section>
+        <h2>My info</h2>
+
+        <div id="profile-info">
+          <article>
+            <ul>
+              <li>Name:</li>
+              <li>Age:</li>
+              <li>Preferences:</li>
+              <li>Hobby's:</li>
+            </ul>
+          </article>
+
+          <article>
+            <ul>
+              <li> <%=name%> </li>
+              <li>23</li>
+              <li>Women</li>
+              <li>Sport Gaming</li>
+            </ul>
+          </article>
+        </div>
+        <a href="/edit-profile"><button type="button" name="button" >Edit profile</button></a>
+    </section>
+
+</main>
+
+<footer>
+    <%- include ('partials/footer.ejs') %>
+</footer>
+
+</body>

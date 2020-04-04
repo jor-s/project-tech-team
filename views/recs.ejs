@@ -1,0 +1,38 @@
+  <%- include ('./partials/head.ejs') %>
+
+  <body class="container">
+
+    <%- include ('./partials/header.ejs') %>
+
+   <main>
+
+     <section id="main">
+       <h1>Welcome <%= user.name  %> </h1>
+     </section>
+
+     <section>
+       <h2>Find People you like</h2>
+
+       <% for (var i = 0; i < users.length; i++) { %>
+        <div class="card">
+
+<img class="avatar" src="/img/<%= users[i].picture %> " alt="Placeholder image">
+<p> <%= users[i].name %> </p>
+<p> <%= users[i].age %> </p>
+<p> <%= users[i].date %> </p>
+<p> <%= users[i].pickupline %> </p>
+<form action="recs/vote/<%= users[i]._id %>" method="POST">
+<button type='submit' class="button is-large is-rounded is-danger" name='vote' value="dislike">Dislike</button>
+<button type='submit' class="button is-large is-rounded is-success" name='vote' value="like">Like</button>
+</form>
+        </div>
+      <% } %> 
+     </section>
+
+   </main>
+
+   <footer>
+     <%- include ('partials/footer.ejs') %>
+   </footer>
+
+   </body>

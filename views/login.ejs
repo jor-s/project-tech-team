@@ -1,38 +1,38 @@
-  <%- include ('./partials/head.ejs') %>
+<%- include ('./partials/head.ejs') %>
 
 <body class="container">
 
-    <%- include ('./partials/header.ejs') %>
+  <%- include ('./partials/header.ejs') %>
 
-  <main>
+<main>
 
-    <section id="bgLogin">
+  <section id="bgLogin">
 
-      <div class="box-login">
+    <div class="box-login">
 
-        <img src="../static/img/logo.png">
+      <img src="../static/img/logo.png">
 
-        <h1>Login</h1>
+      <h1>Login</h1>
 
-        <form action="/users/login" method="POST">
+      <form action="/login" method="POST">
 
-          <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
-          <input type="password" id="password" name="password" class="form-control" placeholder="Wachtwoord" />
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+        <input type="password" id="password" name="password" class="form-control" placeholder="Wachtwoord" />
 
-          <button type="submit">Login</button>
+        <button type="submit">Login</button>
 
-        </form>
+      </form>
 
-        <div class="box-secondary">
-          <p>Nog geen account?</p>
-          <button><a href="/register">Registreren</a></button>
-        </div>
-
+      <div class="box-secondary">
+        <p>Nog geen account?</p>
+        <button><a href="/register">Registreren</a></button>
       </div>
 
-    </section>
+    </div>
 
-  </main>
+  </section>
+
+</main>
 
 </body>
 
