@@ -1,24 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const profileController = require('../controllers/profile')
-const passport = require('passport')
+const auth = require('../controllers/auth')
 const imageController = require('../config/multer')
 const bruteforceCheck = require("../config/ratelimiter")
 
 router.get('/', profileController.home)
 
-router.get('/login', profileController.logIn)
-router.post('/login', bruteforceCheck.loginLimiter, passport.authenticate('local', {  failureRedirect: '/login'}), profileController.doLogin)
+router.get('/login', auth.logIn)
+router.post('/login', bruteforceCheck.loginLimiter, auth.doLogin)
 
 // Logout
-router.get('/logout', (req, res) => {
-  req.logout();
-  //req.flash('success_msg', 'You are logged out');
-  res.redirect('/login');
-});
+router.get('/logout', auth.logout)
 
-router.get('/register', profileController.goToRegister)
-router.post('/register', profileController.doRegister)
+router.get('/register', auth.register)
+router.post('/register', auth.doRegister)
 
 router.get('/profile', profileController.profile)
 
@@ -28,4 +24,3 @@ router.post('/edit-profile', imageController.upload.single('picture'), profileCo
 router.use('/recs', require('./recs'));
 
 module.exports = router;
-
