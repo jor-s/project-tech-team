@@ -1,10 +1,10 @@
 const LocalStrategy = require('passport-local').Strategy
 const passport = require('passport')
-const mongoosedata = require('../models/user')
+const User = require('../models/User')
 
 passport.use(new LocalStrategy( {usernameField: 'email'},
   function (username, password, done) {
-    mongoosedata.findOne({
+    User.findOne({
       email: username
     }, function (err, user) {
       console.log('logging userdata in local strategy: ', user)
@@ -46,7 +46,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
   console.log('deserializing: ' + id)
-  mongoosedata.findById(id, function (err, user) {
+  User.findById(id, function (err, user) {
     done(err, user)
   })
 })

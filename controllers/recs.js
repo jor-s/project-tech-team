@@ -1,4 +1,4 @@
-User = require('../models/user')
+User = require('../models/User')
 exports.users = async (req, res) => {
   const thisUser = req.user;
   let users = await findUsers(thisUser);
