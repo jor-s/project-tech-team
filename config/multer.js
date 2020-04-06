@@ -10,7 +10,6 @@ const storage = multer.diskStorage({
     callback(null, './public/img/profile')
   }
 })
-
 //checks if image is supported
 const fileFilter = function (req, file, callback) {
   console.log('firing')
@@ -29,5 +28,4 @@ imageHelper.upload = multer({
     fileSize: 1024 * 1024 * 20
   }
 })
-
 module.exports = imageHelper;

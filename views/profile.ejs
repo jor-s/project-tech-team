@@ -2,12 +2,12 @@
 
 <body class="container">
 
-    <%- include ('partials/profile-header.ejs') %>
+  <%- include ('./partials/header.ejs') %>
 
 <main>
 
     <section id="main">
-        <h1>Welcome user</h1>
+        <h1>Welcome <%= user.name %> </h1>
     </section>
 
     <section>
@@ -16,21 +16,14 @@
         <div id="profile-info">
           <article>
             <ul>
-              <li>Name:</li>
-              <li>Age:</li>
-              <li>Preferences:</li>
-              <li>Hobby's:</li>
+              <li>Name: <%= user.name %>  </li>
+              <li>Age: <%= user.age %></li>
+              <li>Preferences: <%= user.preferences %></li>
+              <li>Hobby's: <%= user.hobby %></li>
             </ul>
           </article>
 
-          <article>
-            <ul>
-              <li> <%=name%> </li>
-              <li>23</li>
-              <li>Women</li>
-              <li>Sport Gaming</li>
-            </ul>
-          </article>
+         
         </div>
         <a href="/edit-profile"><button type="button" name="button" >Edit profile</button></a>
     </section>

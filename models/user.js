@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-let schema = mongoose.Schema
+const Schema = mongoose.Schema
 
-let userSchema = new schema({
+const userSchema = new Schema({
   name: String,
   email: String,
   age: Number,
@@ -12,18 +12,17 @@ let userSchema = new schema({
   picture: String,
   pickupline: String,
   likes: {
-      type: [schema.Types.ObjectId],
+      type: [Schema.Types.ObjectId],
       ref: 'User',
       autopopulate: true
     },
     dislikes: {
-      type: [schema.Types.ObjectId],
+      type: [Schema.Types.ObjectId],
       ref: 'User',
       autopopulate: true
     }
   })
 
-let user = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
 
-module.exports = user
-
+module.exports = User

@@ -6,11 +6,18 @@
     <i class="fas fa-bars"></i>
   </label>
 
-  <img id="logoHeader" src="/public/img/logo_header.png">
-
+  <a href="/"><img id="logoHeader" src="/public/img/logo_header.png"></a>
+<% if (typeof user == 'object' && user) { %>
   <ul>
-    <li><button onclick="location.href='login'" type="button">Log in</button></li>
-    <li><a href="/">Home</a></li>
+    <li><a href="/recs">Discover</a></li>
+    <li><a href="/Profile">Profile</a></li>
+      <li><a href="/logout"><button type="button">Log out</button></a></li>
+   
   </ul>
-
+<% } else { %>
+ <ul>
+  <li><button onclick="location.href='login'" type="button">Log in</button></li>
+ </ul>
+<% } %>
+ 
 </nav>
