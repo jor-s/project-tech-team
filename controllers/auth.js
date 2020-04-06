@@ -2,11 +2,12 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 const passport = require('passport')
-exports.register = function (req, res) {
+
+exports.register =  (req, res) => {
   res.render('register.ejs')
 }
 
-exports.doRegister = function (req, res) {
+exports.doRegister = (req, res) => {
   let password = req.body.password;
 
   bcrypt.genSalt(saltRounds, (err, salt) => { //generate salt rounds
@@ -31,7 +32,7 @@ exports.doRegister = function (req, res) {
   })
 }
 
-exports.logIn = function (req, res) {
+exports.logIn = (req, res) => {
   res.render('login.ejs')
 }
 

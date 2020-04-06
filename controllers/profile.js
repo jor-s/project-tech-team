@@ -8,12 +8,12 @@ const saltRounds = 10;
 
 
 
-exports.home = function(req, res) {
+exports.home = (req, res) => {
   console.log(req.session)
   res.render('index.ejs')
 }
 
-exports.profile = function (req, res) {
+exports.profile =  (req, res) => {
   if (req.user) {
     res.render('profile.ejs', {
       user: req.user
@@ -23,7 +23,7 @@ exports.profile = function (req, res) {
   }
 }
 
-exports.goToEdit = function (req, res) {
+exports.goToEdit =  (req, res) => {
   if (req.user) {
     res.render('edit-profile.ejs')
   } else {
@@ -31,7 +31,7 @@ exports.goToEdit = function (req, res) {
   }
 }
 
-exports.doEdit = function(req, res) {
+exports.doEdit = (req, res) => {
   let filePath = req.file.path
   let randomCheck = req.body.pickupBox
   let name = req.body.name
