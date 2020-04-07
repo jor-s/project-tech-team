@@ -57,6 +57,7 @@ For security we have used a few packages like:
 * PassportJS http://www.passportjs.org/docs/authenticate/
 * Dotenv https://www.npmjs.com/package/dotenv
 * Bcrypt https://www.npmjs.com/package/passport
+* Ratelimiter https://www.npmjs.com/package/ratelimiter
 
 ## How to install
 
