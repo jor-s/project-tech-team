@@ -1,5 +1,5 @@
 # project-tech-team
-Project Tech: Team - Jordy Sahit, Chun Xiao, Azam Awan and Giovanni Dwidjosewojo
+Project Tech: 
 
 ## Lovr - Where Lovebirds Meet
 
@@ -16,7 +16,7 @@ Chun Xiao
 Jordy Sahit
 > As a user I would like to be able to tell something about myself so that more people can get to know me.
 
-# Requirements list
+## Requirements list
 We have divided our job storys into small functionalities. These functionalities will be presented in a list view below:
 
 - Responsive
@@ -40,7 +40,7 @@ User is shown a responsive web page
 User can Login / Register (safe)
 There are various NPM packages that would help me to work out my job story. I did preliminary research and placed the chosen NPM packages in a MoSCoW table.
 
-# How to install
+## How to install
 
 1. Open a terminal
 
@@ -58,6 +58,8 @@ npm Install
 ```
 npm start
 ```
+## Contributors
+Team - Jordy Sahit, Chun Xiao, Azam Awan and Giovanni Dwidjosewojo
 
-#License
+## License
 [MIT](https://github.com/sahitj001/project-tech-team/blob/master/LICENSE)
