@@ -17,7 +17,7 @@ router.get('/logout', auth.logout)
 router.get('/register', auth.register)
 router.post('/register', auth.doRegister)
 
-router.get('/likes', likes.likes)
+router.get('/likes', requiresLogin, likes.likes)
 
 router.use('/profile', requiresLogin, require('./profile'))
 router.use('/discover', requiresLogin, require('./discover'))
