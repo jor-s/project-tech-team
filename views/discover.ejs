@@ -21,7 +21,7 @@
 <p> I'm Lookin for <%= users[i].preference %> </p>
 <p> So, tell me: <%= users[i].pickupline %> </p>
 <p> My Hobby's are: <%= users[i].pickupline %> </p>
-<form action="recs/vote/<%= users[i]._id %>" method="POST">
+<form action="/discover/vote/<%= users[i]._id %>" method="POST">
 <button type='submit' class="button dislike" name='vote' value="dislike">Dislike</button>
 <button type='submit' class="button like" name='vote' value="like">Like</button>
 </form>

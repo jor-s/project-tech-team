@@ -5,7 +5,7 @@ exports.users = async (req, res) => {
 	const thisUser = req.user;
 	let users = await findUsers(thisUser)
 	console.log(users);
-	res.render('recs',{
+	res.render('discover',{
 		user:req.user,
 		users: users
 	})
@@ -22,7 +22,7 @@ exports.vote = async (req, res, next) => {
 		if (vote == 'dislike') {
 			await dislike(user, id)
 		}
-		res.redirect('/recs')
+		res.redirect('/discover')
 	} catch (err) {
 		next(err)
 	}
