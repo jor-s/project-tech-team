@@ -151,6 +151,14 @@ nav ul li button {
 
 }
 
+fieldset{
+    border-style: none;
+}
+
+.hidden{
+	display: none;
+}
+
 .flexAge{
 	display: flex;
   flex-direction: column;
