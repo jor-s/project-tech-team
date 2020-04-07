@@ -19,6 +19,7 @@ passport.use(new LocalStrategy( {usernameField: 'email'},
     })
   }
 ))
+
 passport.serializeUser( (user, done) => {
   done(null, user.id);
   });
@@ -39,13 +40,13 @@ passport.serializeUser( (user, done) => {
 //   }
 // };
 
-passport.serializeUser(function (user, done) {
-  //console.log('serializing: ' + user.id)
+passport.serializeUser( (user, done) => {
+  console.log('serializing: ' + user.id)
   done(null, user.id)
 })
 
-passport.deserializeUser(function (id, done) {
-  //console.log('deserializing: ' + id)
+passport.deserializeUser( (id, done) => {
+  console.log('deserializing: ' + id)
   User.findById(id, function (err, user) {
     done(err, user)
   })
