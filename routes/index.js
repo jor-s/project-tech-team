@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const bruteforceCheck = require("../config/ratelimiter")
+const bruteforceCheck = require('../config/ratelimiter')
 
 const requiresLogin = require('../config/middleware/requiresLogin')
 
