@@ -29,6 +29,11 @@ We will make the use of Discord to openly communicate with each other via the ca
 ## Githhub Projects
 Assignments and to do lists will be marked in the Github Projects tab. Each 'to do' tab will be marked completed if the standards are met with the requirement.
 
+## Github rules
+* Individual features should be developed in thei're own respective branches.
+* Every feater that is finished should always be pushed in to development and never in to master directly.
+* Mergers from development into master, always has to be reviewed by other contributors and checked if everything still functions.
+
 # Appointments
 When the project group is scheduled, the project members should be present unless otherwise agreed the day before.
 
