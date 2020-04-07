@@ -23,7 +23,7 @@ const UserSchema = new Schema({
 		autopopulate: true
 	}
 })
-
+UserSchema.plugin(require('mongoose-autopopulate'));
 //http://devsmash.com/blog/password-authentication-with-mongoose-and-bcrypt
 //https://stackoverflow.com/questions/12577263/how-to-use-methods-on-schema-in-mongoose-express
 //https://gist.github.com/AndrewHenderson/4315493

@@ -18,6 +18,7 @@
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.6",
+    "mongoose-autopopulate": "^0.12.1",
     "multer": "^1.4.2",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.1",
@@ -27,35 +28,35 @@
     "eslint": "^6.8.0",
     "nodemon": "^2.0.2"
   },
-  	"eslintIgnore": [
-  	  "*.ejs",
-  	  "node_modules/"
-  	],
-  	"eslintConfig": {
-  	  "env": {
-  	    "browser": true,
-  	    "commonjs": true,
-  	    "es6": true,
-  	    "node": true
-  	  },
-  	  "extends": "eslint:recommended",
-  	  "globals": {
-  	    "Atomics": "readonly",
-  	    "SharedArrayBuffer": "readonly"
-  	  },
-  	  "parserOptions": {
-  	    "ecmaVersion": 2018
-  	  },
-  	  "rules": {
-  	    "indent": [
-  	      "error",
-  	      "tab"
-  	    ],
-  	    "quotes": [
-  	      "error",
-  	      "single"
-  	    ],
-  	    "no-var": "error"
-  	  }
-  	}
+  "eslintIgnore": [
+    "*.ejs",
+    "node_modules/"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "rules": {
+      "indent": [
+        "error",
+        "tab"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-var": "error"
+    }
+  }
 }
