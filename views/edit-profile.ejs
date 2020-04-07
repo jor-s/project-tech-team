@@ -18,19 +18,19 @@
           <fieldset class="flexForm">
 
             <label>What is your name?
-              <input type="text" name="name" required>
+              <input type="text" name="name" value="<%= user.name %>" required>
             </label>
 
             <label class="flexAge">What is your age.
-              <input type="number" name="age" class="pickupCheckbox" required >
+              <input type="number" name="age" class="pickupCheckbox" value="<%= user.age %>" required>
             </label>
 
             <label>Which gender do you prefer?
-              <input type="text" name="genderPreference" required>
+              <input type="text" name="genderPreference" value="<%= user.preferences %>" required>
             </label>
 
             <label>What is your pickup line?
-              <input type="text" name="pickupText">
+              <input type="text" name="pickupText" value="<%= user.pickupline %>">
             </label>
 
             <label class="flexForm">If you can't think about one, you can choose for a random one. Check this box if you want one.
@@ -38,11 +38,11 @@
             </label>
 
             <label>Do you have any hobbies?
-              <input type="text" name="hobby">
+              <input type="text" name="hobby" value="<%= user.hobby %>">
             </label>
 
             <label class="uploadContainer">Upload your profile picture.
-              <input class="uploadInput" type="file" name="picture" required>
+              <input class="uploadInput" type="file" name="picture">
             </label>
 
             <button type="submit" class="saveButton">Save</button>

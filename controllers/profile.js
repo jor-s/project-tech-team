@@ -4,32 +4,19 @@ const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 
-const saltRounds = 10;
-
-
-
-exports.home = (req, res) => {
-  console.log(req.session)
-  res.render('index.ejs')
-}
-
-exports.profile =  (req, res) => {
+exports.profile = (req, res) => {
   if (req.user) {
-    res.render('profile.ejs', {
+    res.render('profile', {
       user: req.user
     })
-  } else {
-    res.redirect('/login')
   }
 }
+exports.goToEdit = (req, res) => {
+    res.render('edit-profile', {
+      user: req.user
+    })
+  }
 
-exports.goToEdit =  (req, res) => {
-  if (req.user) {
-    res.render('edit-profile.ejs')
-  } else {
-    res.redirect('login')
-  }
-}
 
 exports.doEdit = (req, res) => {
   let filePath = req.file.path
@@ -118,4 +105,3 @@ exports.doEdit = (req, res) => {
     })
   }
 }
-

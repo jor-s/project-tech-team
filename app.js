@@ -1,13 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const router = require('./routes/index.js')
+const routes = require('./routes')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 const passport = require('./config/passport')
-const flash = require('connect-flash');
+const flash = require('connect-flash')
 const port = 3000
 const app = express()
 let db = mongoose.connection
@@ -25,7 +25,7 @@ let db = mongoose.connection
   .use(passport.session())
   .use('/public', express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
-  .use('/', router)
+  .use(routes)
   .set('view engine', 'ejs')
   .set('views', 'views')
   .listen(port, () => console.log('Listening on port ' + port))

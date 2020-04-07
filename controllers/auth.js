@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt')
 const validator = require('express-validator')
 const passport = require('passport')
 
+const saltRounds = 10;
+
 exports.register =  (req, res) => {
   res.render('register.ejs')
 }

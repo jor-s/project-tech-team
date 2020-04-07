@@ -16,16 +16,16 @@
         <div id="profile-info">
           <article>
             <ul>
-              <li>Name: <%= user.name %>  </li>
-              <li>Age: <%= user.age %></li>
+             <li> <%= user.name %>, <bold><%= user.age %> </bold></li>
               <li>Preferences: <%= user.preferences %></li>
               <li>Hobby's: <%= user.hobby %></li>
+              <li>Pickupline <%= user.pickupline %></li>
             </ul>
           </article>
 
          
         </div>
-        <a href="/edit-profile"><button type="button" name="button" >Edit profile</button></a>
+        <a href="/profile/edit">Edit profile</a>
     </section>
 
 </main>
