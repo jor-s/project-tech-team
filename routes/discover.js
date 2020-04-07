@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const recs = require('../controllers/discover');
+const discover = require('../controllers/discover');
 
-router.get('/', recs.users);
-router.post('/vote/:id', recs.vote);
+router.get('/', discover.users);
+router.post('/vote/:id', discover.vote);
 
 module.exports = router;
