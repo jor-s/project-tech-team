@@ -58,7 +58,7 @@ exports.doEdit = (req, res) => {
 						hobby: userHobby
 					}
 				}, {
-					useFineAndModify: false
+					useFindAndModify: false
 				}, function(err) {
 					if (err) {
 						console.log('something went wrong when i tried to update: ', err)
@@ -66,10 +66,8 @@ exports.doEdit = (req, res) => {
 						console.log('account has been updated')
 					}
 				})
-				res.redirect('profile', {
-					pickupLine: temp
-				})
-				return temp
+				res.redirect('/profile')
+				return
 			})
 			.catch(function(err) {
 				if (err) {
@@ -91,13 +89,13 @@ exports.doEdit = (req, res) => {
 				hobby: userHobby
 			}
 		}, {
-			useFineAndModify: false
+			useFindAndModify: false
 		}, function(err) {
 			if (err) {
 				console.log('something went wrong when i tried to update: ', err)
 			} else {
 				console.log('account has been updated without checkbox tick')
-				res.redirect('profile')
+				res.redirect('/profile')
 			}
 		})
 	}

@@ -22,29 +22,13 @@ passport.serializeUser( (user, done) => {
 	done(null, user.id);
 });
 
-// module.exports = {
-//   ensureAuthenticated: function(req, res, next) {
-//     if (req.isAuthenticated()) {
-//       return next();
-//     }
-//     req.flash('error_msg', 'Please log in to view that resource');
-//     res.redirect('/login');
-//   },
-//   forwardAuthenticated: function(req, res, next) {
-//     if (!req.isAuthenticated()) {
-//       return next();
-//     }
-//     res.redirect('profile');
-//   }
-// };
-
 passport.serializeUser( (user, done) => {
-	console.log('serializing: ' + user.id)
+	//console.log('serializing: ' + user.id)
 	done(null, user.id)
 })
 
 passport.deserializeUser( (id, done) => {
-	console.log('deserializing: ' + id)
+	//console.log('deserializing: ' + id)
 	User.findById(id, function (err, user) {
 		done(err, user)
 	})
