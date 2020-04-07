@@ -45,7 +45,7 @@ https://expressjs.com/en/starter/installing.html
 ### Mongoose
 Our database is based on Mongoose from MongoDB with a Json file structure.
 https://www.npmjs.com/package/mongoose
-!(https://user-images.githubusercontent.com/45426792/78688575-b065be80-78f5-11ea-9803-fd0ccfdab39b.PNG)
+![Capture](https://user-images.githubusercontent.com/45426792/78688575-b065be80-78f5-11ea-9803-fd0ccfdab39b.PNG)
 
 
 ### EJS
@@ -57,6 +57,7 @@ For security we have used a few packages like:
 * PassportJS http://www.passportjs.org/docs/authenticate/
 * Dotenv https://www.npmjs.com/package/dotenv
 * Bcrypt https://www.npmjs.com/package/passport
+* Ratelimiter https://www.npmjs.com/package/ratelimiter
 
 ## How to install
 
