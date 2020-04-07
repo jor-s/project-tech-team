@@ -151,15 +151,12 @@ nav ul li button {
 
 }
 
-.ageEdit{
-	margin-top: 0.5em;
-	margin-bottom: 1em;
-	border-radius: 4px;
-	border: 1px solid #ccc;
+fieldset{
+    border-style: none;
 }
 
 .hidden{
-	visibility: hidden;
+	display: none;
 }
 
 .flexAge{
