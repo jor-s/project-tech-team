@@ -52,9 +52,9 @@ https://www.npmjs.com/package/ejs
 
 ### Security
 For security we have used a few packages like: 
-PassportJS http://www.passportjs.org/docs/authenticate/
-Dotenv https://www.npmjs.com/package/dotenv
-Bcrypt https://www.npmjs.com/package/passport
+* PassportJS http://www.passportjs.org/docs/authenticate/
+* Dotenv https://www.npmjs.com/package/dotenv
+* Bcrypt https://www.npmjs.com/package/passport
 
 ## How to install
 
