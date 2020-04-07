@@ -1,9 +1,9 @@
 # project-tech-team
-Project Tech: 
-
 ## Lovr - Where Lovebirds Meet
 
-This is our project for Assignment 2 for project tech within the CMD course.
+A dating app where people can meet each other and maybe become Lovebirds themselves.
+
+lovebirds is a project we made for project Tech within the CMD course.
 
 The requirement within Assignment 2 is to create a dating web application in which three job story's are elaborated. We came up with the following job story's:
 
@@ -31,14 +31,30 @@ The user credentials will be stored in a cluster on MongoDB.Atlas .
 - Encryption
 The user login password will be encrypted in the database for security reasons.
 
-
-
-
 I have divided my job story into small functionalities. These functionalities will be presented in a list view.
 
 User is shown a responsive web page
 User can Login / Register (safe)
 There are various NPM packages that would help me to work out my job story. I did preliminary research and placed the chosen NPM packages in a MoSCoW table.
+
+## Used packages
+### express
+Lovebirds is made with the express framework.
+https://expressjs.com/en/starter/installing.html
+
+### Mongoose
+Our database is based on Mongoose from MongoDB with a Json file structure.
+https://www.npmjs.com/package/mongoose
+
+### EJS
+The template engine used for Lovebirds is EJS
+https://www.npmjs.com/package/ejs
+
+### Security
+For security we have used a few packages like: 
+PassportJS http://www.passportjs.org/docs/authenticate/
+Dotenv https://www.npmjs.com/package/dotenv
+Bcrypt https://www.npmjs.com/package/passport
 
 ## How to install
 
