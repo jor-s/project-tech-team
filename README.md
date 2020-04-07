@@ -26,7 +26,7 @@ The webapp is fully responsive and accessable with all devices.
 The user can create an account. The user can then log in with this account with the given email and password
 
 - MongoDB Cloud Database
-The user credentials will be stored in a cluster on MongoDB.Atlas .
+The user credentials will be stored in a cluster on MongoDB.Atlas.
 
 - Encryption
 The user login password will be encrypted in the database for security reasons.
@@ -45,6 +45,8 @@ https://expressjs.com/en/starter/installing.html
 ### Mongoose
 Our database is based on Mongoose from MongoDB with a Json file structure.
 https://www.npmjs.com/package/mongoose
+![database](https://user-images.githubusercontent.com/45426792/78688575-b065be80-78f5-11ea-9803-fd0ccfdab39b.PNG)
+
 
 ### EJS
 The template engine used for Lovebirds is EJS
