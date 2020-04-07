@@ -66,7 +66,7 @@ exports.doEdit = (req, res) => {
 						console.log('account has been updated')
 					}
 				})
-				res.render('profile.ejs', {
+				res.redirect('profile', {
 					pickupLine: temp
 				})
 				return temp
@@ -97,7 +97,7 @@ exports.doEdit = (req, res) => {
 				console.log('something went wrong when i tried to update: ', err)
 			} else {
 				console.log('account has been updated without checkbox tick')
-				res.render('profile')
+				res.redirect('profile')
 			}
 		})
 	}
