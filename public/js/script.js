@@ -46,6 +46,7 @@ function cases(){
 		pickupline.classList.replace('hidden', 'pickupline');
 		uploadPicture.classList.add('hidden');
 		backButton.classList.remove('hidden');
+		nextButton.classList.remove('hidden');
 		saveButton.classList.add('hidden');
 		break;
 	case 2:
@@ -53,6 +54,7 @@ function cases(){
 		pickupline.classList.replace('pickupline', 'hidden');
 		uploadPicture.classList.toggle('hidden');
 		saveButton.classList.remove('hidden');
+		nextButton.classList.add('hidden');
 		break;
 	}
 }
