@@ -2,7 +2,9 @@
   "name": "project-tech-team",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
+    "eslint": "node_modules/.bin/eslint app.js controllers/*.js public/js/*.js",
     "start": "nodemon app.js"
   },
   "dependencies": {
@@ -22,6 +24,38 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
     "nodemon": "^2.0.2"
-  }
+  },
+  	"eslintIgnore": [
+  	  "*.ejs",
+  	  "node_modules/"
+  	],
+  	"eslintConfig": {
+  	  "env": {
+  	    "browser": true,
+  	    "commonjs": true,
+  	    "es6": true,
+  	    "node": true
+  	  },
+  	  "extends": "eslint:recommended",
+  	  "globals": {
+  	    "Atomics": "readonly",
+  	    "SharedArrayBuffer": "readonly"
+  	  },
+  	  "parserOptions": {
+  	    "ecmaVersion": 2018
+  	  },
+  	  "rules": {
+  	    "indent": [
+  	      "error",
+  	      "tab"
+  	    ],
+  	    "quotes": [
+  	      "error",
+  	      "single"
+  	    ],
+  	    "no-var": "error"
+  	  }
+  	}
 }

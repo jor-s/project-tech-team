@@ -1,4 +1,4 @@
-<%- include ('partials/head.ejs') %>
+<%- include ('partials/edit-head.ejs') %>
 
 <body class="container">
 
@@ -13,48 +13,58 @@
     <section class="formContainer">
 
       <article>
-        <form action="/edit-profile" method="POST" enctype="multipart/form-data">
+        <form action="edit" method="POST" enctype="multipart/form-data">
 
-          <fieldset class="flexForm">
+            <div class="flexForm">
+                <fieldset class="personalia">
+                    <label>What is your name?
+                        <input type="text" name="name">
+                    </label>
 
-            <label>What is your name?
-              <input type="text" name="name" required>
-            </label>
+                    <label class="flexAge">How old are you?
+                        <input type="number" size="3" name="age">
+                    </label>
 
-            <label class="flexAge">What is your age.
-              <input type="number" name="age" class="pickupCheckbox" required >
-            </label>
+                    <label>Do you have any hobbies?
+                        <input type="text" name="hobby">
+                    </label>
 
-            <label>Which gender do you prefer?
-              <input type="text" name="genderPreference" required>
-            </label>
+                    <label>Which gender do you prefer?
+                        <input type="text" name="genderPreference">
+                    </label>
+                </fieldset>
 
-            <label>What is your pickup line?
-              <input type="text" name="pickupText">
-            </label>
+                <fieldset class="pickupline">
+                    <label>What is your pickup line?
+                        <input type="text" name="pickupText">
+                    </label>
 
-            <label class="flexForm">If you can't think about one, you can choose for a random one. Check this box if you want one.
-              <input type="checkbox" name="pickupBox" class="pickupCheckbox">
-            </label>
+                    <label class="flexForm">If you can't think about one, you can choose for a random one. Check
+                        this box if you want one.
+                        <input type="checkbox" name="pickupBox" class="pickupCheckbox">
+                    </label>
+                </fieldset>
 
-            <label>Do you have any hobbies?
-              <input type="text" name="hobby">
-            </label>
+                <fieldset class="uploadPicture">
+                    <label class="uploadContainer">Upload your profile picture.
+                        <input class="uploadInput" type="file" name="picture">
+                    </label>
+                </fieldset>
 
-            <label class="uploadContainer">Upload your profile picture.
-              <input class="uploadInput" type="file" name="picture" required>
-            </label>
-
-            <button type="submit" class="saveButton">Save</button>
-          </fieldset>
+                <button type="submit" class="saveButton">Save</button>
+            </div>
 
         </form>
 
+        <button class="next">Next</button>
+
+        <button class="back">Back</button>
+
         <div class="cancelContainer">
-          <a href="/profile" class="cancelButton">Cancel</a>
+            <a href="/profile" class="cancelButton">Cancel</a>
         </div>
 
-      </article>
+    </article>
 
     </section>
 
@@ -63,7 +73,7 @@
   <footer>
     <%- include ('partials/footer.ejs') %>
   </footer>
-
+  <script src="/public/js/script.js"></script>
 </body>
 
 </html>
