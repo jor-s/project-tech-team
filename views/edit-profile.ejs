@@ -6,7 +6,7 @@
 
   <main>
 
-    <section id="main">
+    <section id="hero">
       <h1>Edit profile</h1>
     </section>
 
@@ -25,6 +25,7 @@
 
                 <fieldset class="personalia">
                     <label>What is your name?
+
                         <input type="text" name="name" placeholder=<%= user.name %> >
                     </label>
 
@@ -38,12 +39,13 @@
 
                     <label>Which gender do you prefer?
                         <input type="text" name="genderPreference" placeholder=<%= user.preferences %> >
+
                     </label>
                 </fieldset>
 
                 <fieldset class="pickupline">
                     <label>What is your pickup line?
-                        <input type="text" name="pickupText">
+                        <input type="text" name="pickupText" value="<%= user.pickupline %>">
                     </label>
 
                     <label class="flexLine">If you can't think about one, you can choose for a random one. Check
@@ -69,7 +71,6 @@
         <button class="back hidden">Back</button>
 
         <button class="next hidden">Next</button>
-
 
 
         <div class="cancelContainer">

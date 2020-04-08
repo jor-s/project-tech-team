@@ -29,7 +29,6 @@ body {
 }
 
 section {
-	min-height: 75vh;
 	padding: 75px 0px 75px 0px;
 	margin: 0vw 15vw 0vw 15vw;
 	border-bottom: 1px solid rgb(215, 215, 215);
@@ -44,7 +43,7 @@ h2 {
 	font-size: 3em;
 }
 
-section button {
+section .button {
 	font-size: 1em;
 	text-transform: uppercase;
 
@@ -55,6 +54,97 @@ section button {
 
 	color: #d61e3a;
 }
+main {
+	min-height: 100vh;
+}
+
+.cards{ 
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-direction: column;
+
+}
+
+.card {
+	border: 1px solid rgba(83, 83, 83, 0.2);
+	border-radius: .5em;
+	margin-bottom: 1em;
+	overflow: hidden;
+	
+	width: 20em;
+	-webkit-transition: box-shadow 0.4s ease-out;
+	-moz-transition: box-shadow 0.4s ease-out;
+	-o-transition: box-shadow 0.4s ease-out;
+	transition: box-shadow 0.4s ease-out;
+	
+}
+.card:hover {
+	-webkit-box-shadow: 0px 20px 40px -18px rgba(0, 0, 0, 0.76);
+	-moz-box-shadow: 0px 20px 40px -18px rgba(0, 0, 0, 0.76);
+	box-shadow: 0px 20px 40px -18px rgba(0, 0, 0, 0.76);
+}
+.card img{
+	width:100%;
+}
+.card-content{
+	padding: 1em;
+}
+.votes {
+	padding-top: .5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vote {
+	justify-content: center;
+	padding: 1em;
+	margin: .5em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border-radius: 1000%;
+	display: inline-flex;
+	border: 0;
+}
+.vote .fas {
+align-items: center;
+display: inline-flex;
+justify-content: center;
+color: #fff;
+}
+.like{
+	background-color: #2ecc71;
+}
+.dislike {
+	background-color: #e74c3c;
+}
+.vote:hover{
+	opacity: 0.7;
+}
+@keyframes pageTransition {
+	0% {
+		opacity: 0;
+		transform: translateY(20em);
+	}
+
+	80% {
+		opacity: .2;
+
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.page-content {
+	animation: pageTransition .5s ease-out 0s 1;
+	-webkit-transition: background-color 0.5s ease-out;
+	-moz-transition: background-color 0.5s ease-out;
+	-o-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
+}
+
 
 
 /********************
@@ -64,7 +154,7 @@ section button {
 nav {
 	width: 100%;
 	position: fixed;
-	background: transparent;
+	background: rgba(0, 0, 0, .1);
 
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
@@ -103,16 +193,25 @@ nav ul li a:hover {
 	transition: .3s;
 }
 
-nav ul li button {
+nav ul li .button {
 	font-size: 1em;
 	text-transform: uppercase;
-
+background: #fff;
 	padding: 15px 30px 15px 30px;
 	margin-right: 50px;
 	border-style: none;
 	border-radius: 8px;
 
 	color: #d61e3a;
+}
+nav ul li .button:hover {
+	color: #fff;
+	background: #d53369;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #cbad6d, #d53369);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #cbad6d, #d53369);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 input[type="number"]{
@@ -264,15 +363,6 @@ fieldset{
 
 }
 
-nav ul li button:hover {
-	color: #fff;
-	background: #d53369;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #cbad6d, #d53369);
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #cbad6d, #d53369);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 
 .checkbtn {
 	font-size: 30px;
@@ -393,9 +483,7 @@ article ul {
 /*********************
 ******* Header *******
 *********************/
-
-#main {
-	min-height: 75vh;
+#hero {
 	margin: 0vw 0vw 0vw 0vw;
 	background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('../img/slider1.jpg');
 	background-position: center center;
@@ -404,11 +492,10 @@ article ul {
 	backface-visibility: hidden;
 }
 
-#main h1 {
+#hero h1 {
 	text-align: center;
 	font-size: 7em;
 	color: #fff;
-	padding-top: 20vh;
 }
 
 /* index/home slider*/
@@ -629,7 +716,8 @@ button a {
 input[type=text],
 [type=name],
 [type=email],
-[type=password] {
+[type=password],
+[type=number] {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
