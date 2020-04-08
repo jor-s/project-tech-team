@@ -4,6 +4,7 @@
   "main": "app.js",
   "scripts": {
     "eslint": "node_modules/.bin/eslint app.js controllers/*.js public/js/*.js",
+    "stylelint": "node_modules/.bin/stylelint public/stylesheets/*.css",
     "start": "nodemon app.js"
   },
   "repository": {
@@ -52,7 +53,9 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "stylelint": "^13.3.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "eslintIgnore": [
     "*.ejs",
@@ -88,5 +91,13 @@
         "never"
       ]
     }
-  }
+  },
+  	"stylelint": {
+  		"extends": "stylelint-config-standard",
+  		"rules": {
+  			"indentation": "tab",
+  			"number-leading-zero": "never",
+  			"no-descending-specificity": null
+  		}
+  	}
 }
