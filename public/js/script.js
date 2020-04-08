@@ -54,6 +54,8 @@ function cases(){
 		//progressbar
 		progressbar.classList.remove('hidden');
 		progress1.classList.remove('hidden');
+		progress2.classList.remove('hidden');
+		progress3.classList.remove('hidden');
 		break;
 	case 1:
 		//fieldsets
@@ -68,7 +70,7 @@ function cases(){
 
 		//progressbar
 		progress1.style.backgroundColor = '#77DD77';
-		progress2.classList.remove('hidden');
+
 		break;
 	case 2:
 		personalia.classList.replace('personalia', 'hidden');
@@ -82,7 +84,7 @@ function cases(){
 		//progressbar
 		done.classList.add('hidden');
 		progress2.style.backgroundColor = '#77DD77';
-		progress3.classList.remove('hidden');
+
 		break;
 	case 3:
 		//fieldsets
