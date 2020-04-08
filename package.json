@@ -1,11 +1,17 @@
 {
   "name": "project-tech-team",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "main": "app.js",
   "scripts": {
     "eslint": "node_modules/.bin/eslint app.js controllers/*.js public/js/*.js",
     "start": "nodemon app.js"
+  }, "repository": {
+    "type": "git",
+    "url": "git://github.com/sahitj001/project-tech-team.git"
+  },
+  "homepage": "https://github.com/sahitj001/project-tech-team",
+  "bugs": {
+    "url": "https://github.com/sahitj001/project-tech-team/issues"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",

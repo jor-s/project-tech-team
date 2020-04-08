@@ -6,21 +6,21 @@
 
 <main>
 
-    <section id="main">
-        <h1>Welcome <%= user.name %> </h1>
+    <section id="hero">
+        <h1>Profile</h1>
     </section>
 
-    <section>
-        <h2>My info</h2>
+    <section class="page-content">
+        <h2>Welcome <%= user.name %> </h2>
 
         <div id="profile-info">
           <article>
-            <ul>
-             <li> <%= user.name %>, <bold><%= user.age %> </bold></li>
-              <li>Preferences: <%= user.preferences %></li>
-              <li>Hobby's: <%= user.hobby %></li>
-              <li>Pickupline <%= user.pickupline %></li>
-            </ul>
+            
+             <p><%= user.name %>, <b><%= user.age %> </b></p>
+              <p>Preferences: <%= user.preferences %></p>
+              <p>Hobby's: <%= user.hobby %></p>
+              <p>Pickupline <%= user.pickupline %></p>
+            
           </article>
 
 
