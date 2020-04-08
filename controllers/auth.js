@@ -2,7 +2,7 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const {	validationResult
-} = require('express-validator/check');
+} = require('express-validator')
 
 const saltRounds = 10
 
@@ -34,14 +34,14 @@ exports.doRegister = (req, res) => {
 		})
 	})
 
-	const errors = validationResult(req).mapped();
+	const errors = validationResult(req).mapped()
 	if (Object.keys(errors).length>0) {
 		console.log('ik log vanaf createperson.js')
 		res.render('register', {
 			user: req.user,
 			errors: errors
-		});
-		return;
+		})
+		return
 	}
 }
 
