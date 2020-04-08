@@ -214,6 +214,23 @@ nav ul li .button:hover {
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+input[type="number"]{
+	width: 20%;
+	padding: 15px 30px 15px 30px;
+	margin: 0.5em 0;
+	border-radius: 0.25em;
+	border: 1px solid #ccc;
+}
+
+.done{
+	margin: auto;
+}
+
+div p{
+	margin: auto;
+	animation: fadeinOpacity 0.
+}
+
 .uploadContainer{
 	display: flex;
 	flex-direction: column;
@@ -236,27 +253,72 @@ nav ul li .button:hover {
 }
 
 .flexForm{
+	width: 30em;
+	height: 35em;
 	display: flex;
   flex-direction: column;
-	flex-wrap: wrap;
+	margin: auto;
 	border-style: none;
 }
 
+.flexLine{
+	width: 30em;
+	display: flex;
+  flex-direction: column;
+	margin: auto;
+	border-style: none;
+}
 .pickupCheckbox{
 	margin-top: 0.5em;
 	margin-bottom: 1em;
 	border-radius: 4px;
 	border: 1px solid #ccc;
-
 }
 
 fieldset{
 		border-style: none;
-		animation: fadein 1.5s;
+		animation: fadein 0.8s;
 }
 
-.backButton{
-	animation: fadein 1.5s;
+.progressbar{
+	display:flex;
+	flex-direction: row;
+	height: 5em;
+	width: 100%;
+}
+
+.progressbar > div{
+	width: 9em;
+	height: 0.5em;
+	animation:fadeinOpacity 1.5s;
+	margin: 1em 1em 2em 1em;
+}
+
+.progress1{
+	background-color: #FF5B63;
+}
+
+.progress2{
+	background-color: #FF5B63;
+}
+
+.progress3{
+	background-color: #FF5B63;
+}
+
+.next{
+	animation:fadeinOpacity 1.5s;
+}
+
+.back{
+	animation: fadeinOpacity 1.5s;
+}
+
+@keyframes fadeinOpacity{
+	from{ opacity: 0;
+		}
+		to{opacity: 1;
+		}
 }
 
 @keyframes fadein{
@@ -280,12 +342,14 @@ fieldset{
 .saveButton{
 	font-size: 1em;
 	background-color:  #d61e3a;
-	padding: 15px 30px 15px 30px;
+	padding: 1em 3em 1em 3em;
 	border-style: none;
 	border-radius: 8px;
 	color:white;
 	text-align: center;
-	margin-top: 1.5em;
+	margin: 2em auto 1.5em auto;
+	animation: fadeinOpacity 0.8s;
+
 }
 
 .cancelButton{
@@ -293,7 +357,7 @@ fieldset{
 	padding: 15px 30px 15px 30px;
 	border-radius: 8px;
 	border: 1px solid #d61e3a;
-	margin-top: 1em;
+	margin-top: 3em;
 	display: flex;
 	justify-content: flex-start;
 

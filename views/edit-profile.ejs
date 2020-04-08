@@ -12,25 +12,34 @@
 
     <section class="formContainer">
 
-      <article>
+      <div>
         <form action="edit" method="POST" enctype="multipart/form-data">
 
             <div class="flexForm">
+
+                <div class="progressbar hidden">
+                  <div class="progress1 hidden"></div>
+                  <div class="progress2 hidden"></div>
+                  <div class="progress3 hidden"></div>
+                </div>
+
                 <fieldset class="personalia">
                     <label>What is your name?
-                        <input type="text" name="name" value="<%= user.name %>">
+
+                        <input type="text" name="name" placeholder=<%= user.name %> >
                     </label>
 
                     <label class="flexAge">How old are you?
-                        <input type="number" name="age" value="<%= user.age %>">
+                        <input type="number" name="age" max="99" placeholder=<%= user.age %> >
                     </label>
 
                     <label>Do you have any hobbies?
-                        <input type="text" name="hobby" value="<%= user.hobby %>">
+                        <input type="text" name="hobby" placeholder=<%= user.hobby %> >
                     </label>
 
                     <label>Which gender do you prefer?
-                        <input type="text" name="genderPreference" value="<%= user.preferences %>">
+                        <input type="text" name="genderPreference" placeholder=<%= user.preferences %> >
+
                     </label>
                 </fieldset>
 
@@ -39,7 +48,7 @@
                         <input type="text" name="pickupText" value="<%= user.pickupline %>">
                     </label>
 
-                    <label class="flexForm">If you can't think about one, you can choose for a random one. Check
+                    <label class="flexLine">If you can't think about one, you can choose for a random one. Check
                         this box if you want one.
                         <input type="checkbox" name="pickupBox" class="pickupCheckbox">
                     </label>
@@ -51,20 +60,24 @@
                     </label>
                 </fieldset>
 
+                <div class="done hidden">
+                  <p>You are done!</p>
+                </div>
                 <button type="submit" class="saveButton">Save</button>
             </div>
 
         </form>
 
-        <button class="button next">Next</button>
+        <button class="back hidden">Back</button>
 
-        <button class="button back">Back</button>
+        <button class="next hidden">Next</button>
+
 
         <div class="cancelContainer">
             <a href="/profile" class="cancelButton">Cancel</a>
         </div>
 
-    </article>
+      </div>
 
     </section>
 
@@ -74,6 +87,7 @@
     <%- include ('partials/footer.ejs') %>
   </footer>
   <script src="/public/js/script.js"></script>
+
 </body>
 
 </html>
