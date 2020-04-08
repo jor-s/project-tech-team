@@ -2,9 +2,9 @@
 const User = require('../models/User')
 
 exports.users = async (req, res) => {
-	const thisUser = req.user;
+	const thisUser = req.user
 	let users = await findUsers(thisUser)
-	console.log(users);
+	console.log(users)
 	res.render('discover',{
 		user:req.user,
 		users: users
@@ -47,13 +47,13 @@ let findUsers = (thisUser) => {
 let like = (userID, voteID) => {
 	return new Promise(async (resolve, reject) => {
 		try {
-			const user = await User.findById(userID);
+			const user = await User.findById(userID)
 			const checkDup = user.likes.includes(voteID)
 			if (!checkDup) {
-				user.likes.push(voteID);
+				user.likes.push(voteID)
 				await user.save()
 			}
-			resolve('has resolved');
+			resolve('has resolved')
 		} catch (err) {
 			reject(err)
 		}
@@ -66,10 +66,10 @@ let dislike = (userID, voteID) => {
 			const user = await User.findById(userID)
 			const checkDup = user.dislikes.includes(voteID)
 			if (!checkDup) {
-				user.dislikes.push(voteID);
+				user.dislikes.push(voteID)
 				await user.save()
 			}
-			resolve('has resolved');
+			resolve('has resolved')
 		} catch (err) {
 			reject(err)
 		}

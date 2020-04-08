@@ -28,4 +28,4 @@ imageHelper.upload = multer({
 		fileSize: 1024 * 1024 * 20
 	}
 })
-module.exports = imageHelper;
+module.exports = imageHelper

@@ -5,7 +5,8 @@
   "scripts": {
     "eslint": "node_modules/.bin/eslint app.js controllers/*.js public/js/*.js",
     "start": "nodemon app.js"
-  }, "repository": {
+  },
+  "repository": {
     "type": "git",
     "url": "git://github.com/sahitj001/project-tech-team.git"
   },
@@ -13,6 +14,25 @@
   "bugs": {
     "url": "https://github.com/sahitj001/project-tech-team/issues"
   },
+  "license": "MIT",
+  "authors":[
+    {
+      "name":"Jordy Sahit",
+      "url":"https://github.com/sahitj001"
+    },
+    {
+      "name":"Chun Xiao",
+      "url":"https://github.com/ChunningTatum"
+    },
+    {
+      "name":"Giovanni Dwidjosewojo",
+      "url":"https://github.com/GiovanniDw"
+    },
+    {
+      "name":"Azam Awan",
+      "url":"https://github.com/Awana1"
+    }
+  ],
   "dependencies": {
     "bcrypt": "^4.0.1",
     "connect-flash": "^0.1.1",
@@ -62,7 +82,11 @@
         "error",
         "single"
       ],
-      "no-var": "error"
+      "no-var": "error",
+      "semi": [
+        "error",
+        "never"
+      ]
     }
   }
 }
