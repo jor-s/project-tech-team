@@ -16,7 +16,7 @@
        <% for (var i = 0; i < users.length; i++) { %>
         <div class="card">
 
-<img class="avatar" src="/img/<%= users[i].picture %> " alt="Placeholder image">
+<img class="avatar" src="<%= users[i].picture %> " alt="Placeholder image">
 <p> <%= users[i].name %>, <bold><%= users[i].age %> </bold> </p>
 <p> I'm Lookin for <%= users[i].preference %> </p>
 <p> So, tell me: <%= users[i].pickupline %> </p>
@@ -26,7 +26,7 @@
 <button type='submit' class="button like" name='vote' value="like">Like</button>
 </form>
         </div>
-      <% } %> 
+      <% } %>
      </section>
 
    </main>

@@ -12,9 +12,10 @@
 
     <section>
         <h2>My info</h2>
-
         <div id="profile-info">
           <article>
+            <img src="<%= user.picture %>">
+            <%= console.log(user.picture + ' from profile.ejs') %>
             <ul>
              <li> <%= user.name %>, <bold><%= user.age %> </bold></li>
               <li>Preferences: <%= user.preferences %></li>
@@ -22,7 +23,6 @@
               <li>Pickupline <%= user.pickupline %></li>
             </ul>
           </article>
-
 
         </div>
         <a href="/profile/edit">Edit profile</a>
