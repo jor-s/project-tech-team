@@ -15,22 +15,22 @@
     "url": "https://github.com/sahitj001/project-tech-team/issues"
   },
   "license": "MIT",
-  "authors":[
+  "authors": [
     {
-      "name":"Jordy Sahit",
-      "url":"https://github.com/sahitj001"
+      "name": "Jordy Sahit",
+      "url": "https://github.com/sahitj001"
     },
     {
-      "name":"Chun Xiao",
-      "url":"https://github.com/ChunningTatum"
+      "name": "Chun Xiao",
+      "url": "https://github.com/ChunningTatum"
     },
     {
-      "name":"Giovanni Dwidjosewojo",
-      "url":"https://github.com/GiovanniDw"
+      "name": "Giovanni Dwidjosewojo",
+      "url": "https://github.com/GiovanniDw"
     },
     {
-      "name":"Azam Awan",
-      "url":"https://github.com/Awana1"
+      "name": "Azam Awan",
+      "url": "https://github.com/Awana1"
     }
   ],
   "dependencies": {
