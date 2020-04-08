@@ -10,19 +10,19 @@
         <h1>Profile</h1>
     </section>
 
-    <section class="page-content">
-        <h2>Welcome <%= user.name %> </h2>
-
+    <section>
+        <h2>My info</h2>
         <div id="profile-info">
           <article>
-            
-             <p><%= user.name %>, <b><%= user.age %> </b></p>
-              <p>Preferences: <%= user.preferences %></p>
-              <p>Hobby's: <%= user.hobby %></p>
-              <p>Pickupline <%= user.pickupline %></p>
-            
+            <img src="<%= user.picture %>">
+            <%= console.log(user.picture + ' from profile.ejs') %>
+            <ul>
+             <li> <%= user.name %>, <bold><%= user.age %> </bold></li>
+              <li>Preferences: <%= user.preferences %></li>
+              <li>Hobby's: <%= user.hobby %></li>
+              <li>Pickupline <%= user.pickupline %></li>
+            </ul>
           </article>
-
 
         </div>
         <a href="/profile/edit">Edit profile</a>
