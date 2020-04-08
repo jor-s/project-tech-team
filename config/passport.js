@@ -19,8 +19,8 @@ passport.use(new LocalStrategy( {usernameField: 'email'},
 ))
 
 passport.serializeUser( (user, done) => {
-	done(null, user.id);
-});
+	done(null, user.id)
+})
 
 passport.serializeUser( (user, done) => {
 	//console.log('serializing: ' + user.id)
