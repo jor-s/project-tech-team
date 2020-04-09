@@ -2,7 +2,11 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const {	validationResult
+<<<<<<< HEAD
 } = require('express-validator/check')
+=======
+} = require('express-validator')
+>>>>>>> 288b2813bbac75e30603ebd8e89abdbcd92ca524
 
 const saltRounds = 10
 
