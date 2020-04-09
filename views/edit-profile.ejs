@@ -25,25 +25,25 @@
 
                 <fieldset class="personalia">
                     <label>What is your name?
-                        <input type="text" name="name" placeholder=<%= user.name %> >
+                        <input type="text" name="name" placeholder="John" value=<%= user.name %> >
                     </label>
 
                     <label class="flexAge">How old are you?
-                        <input type="number" name="age" max="99" placeholder=<%= user.age %> >
+                        <input type="number" name="age" max="99" placeholder="20" value=<%= user.age %> >
                     </label>
 
                     <label>Do you have any hobbies?
-                        <input type="text" name="hobby" placeholder=<%= user.hobby %> >
+                        <input type="text" name="hobby" placeholder="Tennis" value=<%= user.hobby %> >
                     </label>
 
                     <label>Which gender do you prefer?
-                        <input type="text" name="genderPreference" placeholder=<%= user.preferences %> >
+                        <input type="text" name="genderPreference" placeholder="Male, female? Or maybe something else.." value=<%= user.preferences %> >
                     </label>
                 </fieldset>
 
                 <fieldset class="pickupline">
                     <label>What is your pickup line?
-                        <input type="text" name="pickupText" value="<%= user.pickupline %>">
+                        <input type="text" name="pickupText" placeholder="Something spicy or funny.." value="<%= user.pickupline %>">
                     </label>
 
                     <label class="flexLine">If you can't think about one, you can choose for a random one. Check
