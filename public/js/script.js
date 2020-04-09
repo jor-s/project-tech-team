@@ -8,13 +8,10 @@ let progress2 = document.querySelector('.progress2')
 let progress3 = document.querySelector('.progress3')
 let done = document.querySelector('.done')
 
-
 let counter = 0
 
-
-
 let nextButton = document.querySelector('.next')
-nextButton.addEventListener('click', function (){
+nextButton.addEventListener('click', ()=> {
 	counter++
 	console.log(counter)
 	cases()
@@ -24,7 +21,7 @@ nextButton.addEventListener('click', function (){
 })
 
 let backButton = document.querySelector('.back')
-backButton.addEventListener('click', function () {
+backButton.addEventListener('click', ()=> {
 	counter--
 	console.log(counter)
 	cases()
