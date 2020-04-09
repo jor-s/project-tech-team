@@ -59,20 +59,11 @@ main {
 	min-height: 100vh;
 }
 
-<<<<<<< HEAD
-.cards{
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-	 flex-direction: column;
-
-=======
 .cards {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
->>>>>>> 288b2813bbac75e30603ebd8e89abdbcd92ca524
 }
 
 .card {
@@ -80,21 +71,11 @@ main {
 	border-radius: .5em;
 	margin-bottom: 1em;
 	overflow: hidden;
-<<<<<<< HEAD
-
-	width: 20em;
-	-webkit-transition: box-shadow 0.4s ease-out;
-	-moz-transition: box-shadow 0.4s ease-out;
-	-o-transition: box-shadow 0.4s ease-out;
-	transition: box-shadow 0.4s ease-out;
-
-=======
 	width: 20em;
 	-webkit-transition: box-shadow .4s ease-out;
 	-moz-transition: box-shadow .4s ease-out;
 	-o-transition: box-shadow .4s ease-out;
 	transition: box-shadow .4s ease-out;
->>>>>>> 288b2813bbac75e30603ebd8e89abdbcd92ca524
 }
 
 .card:hover {
@@ -351,7 +332,6 @@ fieldset {
 	}
 }
 
-<<<<<<< HEAD
 @keyframes fadein{
 	from{ opacity: 0;
 		transform: translateX(30em);
@@ -359,18 +339,6 @@ fieldset {
 	to{opacity: 1;
 	width:100%;
 	transform: translateX(0);}
-=======
-@keyframes fadein {
-	from {
-		opacity: 0;
-		width: 0%;
-	}
-
-	to {
-		opacity: 1;
-		width: 100%;
-	}
->>>>>>> 288b2813bbac75e30603ebd8e89abdbcd92ca524
 }
 
 .hidden {
