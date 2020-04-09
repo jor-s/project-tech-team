@@ -92,6 +92,11 @@ main {
 	padding: 1em;
 }
 
+#slider {
+	color: #fff;
+	text-align: center;
+}
+
 .votes {
 	padding-top: .5em;
 	display: flex;
