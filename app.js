@@ -7,7 +7,7 @@ const session = require('express-session')
 const passport = require('./config/passport')
 const flash = require('connect-flash')
 const path = require('path')
-const port = 3000
+const port = process.env.PORT
 const app = express()
 let db = mongoose.connection
 
