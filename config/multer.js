@@ -5,7 +5,7 @@ const multer = require('multer')
 //configuring multer by choosing the destination for images
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
-		callback(null, './public/img/profile')
+		callback(null, './public/img/profile/')
 	}
 })
 //checks if image is supported

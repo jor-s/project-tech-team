@@ -16,7 +16,7 @@ exports.goToEdit = (req, res) => {
 }
 
 exports.doEdit = (req, res) => {
-	let filePath = req.file.path
+	let filePath = req.file ? req.file.filename : null
 	let randomCheck = req.body.pickupBox
 	let name = req.body.name
 	let userId = req.user.id
