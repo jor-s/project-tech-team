@@ -5,7 +5,7 @@ const bruteforceCheck = require('../config/ratelimiter')
 
 const requiresLogin = require('../config/middleware/requiresLogin')
 
-const { check } = require('express-validator');
+const { check } = require('express-validator')
 
 const auth = require('../controllers/auth')
 const home = require('../controllers/home')
