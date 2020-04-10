@@ -1,4 +1,4 @@
-const User = require('../models/Users')
+const User = require('../models/User')
 const fetch = require('node-fetch')
 const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
 
