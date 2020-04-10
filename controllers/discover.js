@@ -1,5 +1,5 @@
 /* eslint-disable no-async-promise-executor */
-const User = require('../models/User')
+const User = require('../models/user')
 
 exports.users = async (req, res) => {
 	const thisUser = req.user
