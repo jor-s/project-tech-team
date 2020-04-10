@@ -34,9 +34,9 @@ let findUsers = (thisUser) => {
 	object._id = {
 		$nin: ids
 	}
-	return new Promise((resolve, reject) => {
+	return new Promise(async(resolve, reject) => {
 		try {
-			let users = User.find(object)
+			let users = await User.find(object)
 			resolve(users)
 		} catch (err) {
 			reject(err)
