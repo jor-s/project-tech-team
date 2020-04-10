@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const passport = require('./config/passport')
 const flash = require('connect-flash')
+const path = require('path')
 const port = 3000
 const app = express()
 let db = mongoose.connection
@@ -21,11 +22,12 @@ app
 	}))
 	.use(passport.initialize())
 	.use(passport.session())
-	.use('/public', express.static('public'))
+	.use('/public', express.static(path.join(__dirname,'public')))
 	.use(bodyParser.urlencoded({extended: true}))
+	.set('trust proxy', 1)
 	.use(routes)
+	.set('views', path.join(__dirname, 'views'))
 	.set('view engine', 'ejs')
-	.set('views', 'views')
 	.listen(port, () => console.log('Listening on port ' + port))
 
 //connect with database
@@ -37,7 +39,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 	useCreateIndex: 'true'
 })
 
-
 // Connect flash
 app.use(flash())
 
@@ -48,10 +49,6 @@ app.use((req, res, next) => {
 	res.locals.error = req.flash('error')
 	next()
 })
-
-
-
-
 
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
