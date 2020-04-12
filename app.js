@@ -9,7 +9,7 @@ const flash = require('connect-flash')
 const path = require('path')
 const port = process.env.PORT
 const app = express()
-let db = mongoose.connection
+const db = mongoose.connection
 
 app
 	.use(session({
