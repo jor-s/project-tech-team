@@ -389,6 +389,40 @@ fieldset {
 	display: none;
 }
 
+#profile div {
+	margin-top: 2em;
+}
+
+#profile h3 {
+	font-size: 5em;
+}
+
+#profile ul {
+	margin-top: 1em;
+}
+
+#profile li {
+	font-size: 1.7em;
+	max-width: 80%;
+	margin-top: .3em;
+}
+
+#profile img {
+	max-width: 20em;
+	margin-bottom: 5em;
+	margin-right: 3em;
+}
+
+#profile article {
+	display: flex;
+	flex-direction: column;
+}
+
+#profile div {
+	display: flex;
+	justify-content: space-between;
+}
+
 #check {
 	display: none;
 }

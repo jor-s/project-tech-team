@@ -4,7 +4,7 @@
 
   <%- include ('./partials/header.ejs') %>
 
-<main>
+<main id="profile">
 
     <section id="hero">
         <h1>Profile</h1>
@@ -13,14 +13,14 @@
     <section>
         <h2>My info</h2>
         <div id="profile-info">
+					<img src="<%= user.picture %>">
+					<%= console.log(user.picture + ' from profile.ejs') %>
           <article>
-            <img src="<%= user.picture %>">
-            <%= console.log(user.picture + ' from profile.ejs') %>
+						<h3> <%= user.name %> <bold><%= user.age %> </bold> </h3>
             <ul>
-             <li> <%= user.name %>, <bold><%= user.age %> </bold></li>
               <li>Preferences: <%= user.preferences %></li>
               <li>Hobby's: <%= user.hobby %></li>
-              <li>Pickupline <%= user.pickupline %></li>
+              <li>Pickupline: <%= user.pickupline %></li>
             </ul>
           </article>
 
