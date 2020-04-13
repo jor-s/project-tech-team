@@ -2,85 +2,90 @@
 
 <body class="container">
 
-  <%- include ('partials/header.ejs') %>
+	<%- include ('partials/header.ejs') %>
 
-  <main>
+	<main>
 
-    <section id="hero">
-      <h1>Edit profile</h1>
-    </section>
+		<section id="hero">
+			<h1>Edit profile</h1>
+		</section>
 
-    <section class="formContainer">
+		<section class="formContainer">
 
-      <div>
-        <form action="edit" method="POST" enctype="multipart/form-data">
+			<div>
+				<form action="edit" method="POST" enctype="multipart/form-data">
 
-            <div class="flexForm">
+					<div class="flexForm">
 
-                <div class="progressbar hidden">
-                  <div class="progress1 hidden"></div>
-                  <div class="progress2 hidden"></div>
-                  <div class="progress3 hidden"></div>
-                </div>
+						<div class="progressbar hidden">
+							<div class="progress1 hidden"></div>
+							<div class="progress2 hidden"></div>
+							<div class="progress3 hidden"></div>
+						</div>
 
-                <fieldset class="personalia">
-                    <label>What is your name?
-                        <input type="text" name="name" placeholder="John" value=<%= user.name %> >
-                    </label>
+						<fieldset class="personalia">
+							<legend>Personalia</legend>
+							<label>What is your name?
+								<input type="text" name="name" placeholder="John" value=<%= user.name %>>
+							</label>
 
-                    <label class="flexAge">How old are you?
-                        <input type="number" name="age" max="99" placeholder="20" value=<%= user.age %> >
-                    </label>
+							<label class="flexAge">How old are you?
+								<input type="number" name="age" max="99" placeholder="20" value=<%= user.age %>>
+							</label>
 
-                    <label>Do you have any hobbies?
-                        <input type="text" name="hobby" placeholder="Tennis" value=<%= user.hobby %> >
-                    </label>
+							<label>Do you have any hobbies?
+								<input type="text" name="hobby" placeholder="Tennis" value=<%= user.hobby %>>
+							</label>
 
-                    <label>Which gender do you prefer?
-                        <input type="text" name="genderPreference" placeholder="Male, female? Or maybe something else.." value=<%= user.preferences %> >
-                    </label>
-                </fieldset>
+							<label>Which gender do you prefer?
+								<input type="text" name="genderPreference" placeholder="Male, female? Or maybe something else.."
+									value=<%= user.preferences %>>
+							</label>
+						</fieldset>
 
-                <fieldset class="pickupline">
-                    <label>What is your pickup line?
-                        <input type="text" name="pickupText" placeholder="Something spicy or funny.." value="<%= user.pickupline %>">
-                    </label>
+						<fieldset class="pickupline">
+							<legend>Pickupline</legend>
+							<label>What is your pickup line?
+								<input type="text" name="pickupText" placeholder="Something spicy or funny.."
+									value="<%= user.pickupline %>">
+							</label>
 
-                    <label class="flexLine">If you can't think about one, you can choose for a random one. Check
-                        this box if you want one.
-                        <input type="checkbox" name="pickupBox" class="pickupCheckbox">
-                    </label>
-                </fieldset>
+							<label class="flexLine">If you can't think about one, you can choose for a random one. Check
+								this box if you want one.
+								<input type="checkbox" name="pickupBox" class="pickupCheckbox">
+							</label>
+						</fieldset>
 
-                <fieldset class="uploadPicture">
-                    <label class="uploadContainer">Upload your profile picture.
-                        <input class="uploadInput" type="file" name="picture">
-                    </label>
-                </fieldset>
+						<fieldset class="uploadPicture">
+							<legend>Profile picture</legend>
+							<label class="uploadContainer">Upload your profile picture.
+								<input class="uploadInput" type="file" name="picture">
+							</label>
+						</fieldset>
 
-                <div class="done hidden">
-                  <p>You are done!</p>
-                </div>
-                <button type="submit" class="saveButton">Save</button>
-            </div>
+						<div class="done hidden">
+							<p>You are done!</p>
+						</div>
+						<button type="submit" class="saveButton">Save</button>
+					</div>
 
-        </form>
-        <button class="back button hidden">Back</button>
-        <button class="next button hidden">Next</button>
-        <div class="cancelContainer">
-            <a href="/profile" class="cancelButton">Cancel</a>
-        </div>
+				</form>
+				<button class="back button hidden">Back</button>
+				<button class="next button hidden">Next</button>
+				<div class="cancelContainer">
+					<a href="/profile" class="cancelButton">Cancel</a>
+				</div>
 
-      </div>
+			</div>
 
-    </section>
+		</section>
 
-  </main>
+	</main>
 
-  <footer>
-    <%- include ('partials/footer.ejs') %>
-  </footer>
-  <script src="/public/js/script.js"></script>
+	<footer>
+		<%- include ('partials/footer.ejs') %>
+	</footer>
+	<script src="/public/js/script.js"></script>
 
 </body>
 

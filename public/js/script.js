@@ -63,7 +63,6 @@ function cases(){
 		//buttons
 		backButton.classList.remove('hidden')
 		nextButton.classList.remove('hidden')
-		saveButton.classList.add('hidden')
 
 		//progressbar
 		progress1.style.backgroundColor = '#77DD77'
