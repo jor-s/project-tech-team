@@ -13,35 +13,37 @@ exports.register =  (req, res) => {
 exports.doRegister = (req, res) => {
 	let password = req.body.password
 
-	bcrypt.genSalt(saltRounds, (err, salt) => { //generate salt rounds
-		bcrypt.hash(password, salt, (err, hash) => { //Hash the password from req.body.password
-
-			let newUser = new User({
-				name: req.body.name,
-				email: req.body.email,
-				password: hash
-			})
-
-			newUser.save((err) => {
-				if (err) {
-					return err(err)
-				} else {
-					console.log('registerd info: ' + newUser)
-					console.log('has been added')
-					res.render('login')
-				}
-			})
-		})
-	})
-
 	const errors = validationResult(req).mapped()
 	if (Object.keys(errors).length>0) {
-		console.log('ik log vanaf createperson.js')
+		console.log(req.body.password)
+		console.log(req.body.password2)
 		res.render('register', {
 			user: req.user,
 			errors: errors
 		})
-		return
+	} else {
+		bcrypt.genSalt(saltRounds, (err, salt) => { //generate salt rounds
+			bcrypt.hash(password, salt, (err, hash) => { //Hash the password from req.body.password
+				console.log('Hashing')
+				let newUser = new User({
+					name: req.body.name,
+					email: req.body.email,
+					password: hash
+				})
+
+				newUser.save((err) => {
+					if (err) {
+						return err(err)
+					} else {
+						console.log(req.body.password)
+						console.log(req.body.password2)
+						console.log('registerd info: ' + newUser)
+						console.log('has been added')
+						res.render('login')
+					}
+				})
+			})
+		})
 	}
 }
 
