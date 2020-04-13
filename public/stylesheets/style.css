@@ -264,6 +264,10 @@ div p {
 	display: flex;
 }
 
+legend{
+	visibility: hidden;
+}
+
 .flexForm {
 	width: 30em;
 	height: 35em;
