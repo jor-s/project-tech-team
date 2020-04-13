@@ -21,17 +21,11 @@ router.get('/logout', auth.logout)
 
 router.get('/register', auth.register)
 router.post('/register', [
-	check('name').isLength({
-		min: 1
-	}).withMessage('Please fill in your name'),
+	check('name').isLength({ min: 1 }).withMessage('Please fill in your name'),
 	check('email').isEmail().withMessage('This is not a valid email'),
-	check('password').isLength({
-		min: 5
-	}).withMessage('Please use a minimum of 5 characters for your password'),
-	check('passwordcheck', 'Password does not match').custom((value, {
-		req
-	}) => value == req.body.password)
-], auth.doRegister)
+	check('password').isLength({ min: 5 }).withMessage('Please use a minimum of 5 characters for your password'),
+	check('passwordcheck', 'Password does not match').custom((value, {req}) => req.body.password2 === req.body.password)],
+auth.doRegister)
 
 router.get('/likes', requiresLogin, likes.likes)
 
