@@ -1,6 +1,5 @@
 const User = require('../models/User')
-const fetch = require('node-fetch')
-const api_url = 'http://pebble-pickup.herokuapp.com/tweets'
+const https = require('https')
 
 exports.profile = (req, res) => {
 	if (req.user) {
@@ -24,19 +23,25 @@ exports.doEdit = (req, res) => {
 	let userPreference = req.body.genderPreference
 	let userHobby = req.body.hobby
 
+	const options = {
+		hostname: 'pebble-pickup.herokuapp.com',
+		path: '/tweets',
+		method: 'GET'
+	}
+
 	console.log('checkbox is: ', req.body.pickupBox)
 
 	//if checkbox has been checked, connect to api to choose random pickupline
 	if (randomCheck) {
 		//make connection with API
-		fetch(api_url)
-			.then(function(response) {
-				// console.log(response)
-				return response.json()
-			})
-			.then(function(json) {
+		https.get(options, resp => {
+			resp.on('data', d => {
+
 				//taking the list of json pickuplines and putting them in a variable
-				let pickupLines = json
+				let pickupLines = JSON.parse(d)
+
+				// console.log('data is', pickupLines)
+
 				//here I choose which pickupline I want to use. the list consists out of an array so I picked an object within that array
 				//random picker for array
 				console.log('pickupline length is: ', pickupLines.length)
@@ -59,7 +64,7 @@ exports.doEdit = (req, res) => {
 					}
 				}, {
 					useFindAndModify: false
-				}, function(err) {
+				}, function (err) {
 					if (err) {
 						console.log('something went wrong when i tried to update: ', err)
 					} else {
@@ -67,13 +72,8 @@ exports.doEdit = (req, res) => {
 					}
 				})
 				res.redirect('/profile')
-				return
 			})
-			.catch(function(err) {
-				if (err) {
-					console.log(err)
-				}
-			})
+		})
 	} else {
 		console.log('checkbox not ticked')
 		let sentence = req.body.pickupText
@@ -88,9 +88,7 @@ exports.doEdit = (req, res) => {
 				preferences: userPreference,
 				hobby: userHobby
 			}
-		}, {
-			useFindAndModify: false
-		}, function(err) {
+		}, function (err) {
 			if (err) {
 				console.log('something went wrong when i tried to update: ', err)
 			} else {

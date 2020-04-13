@@ -34,7 +34,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 	pass: process.env.DB_PASS,
 	useNewUrlParser: 'true',
 	useUnifiedTopology: 'true',
-	useCreateIndex: 'true'
+	useCreateIndex: 'true',
+	useFindAndModify: false
 })
 
 
