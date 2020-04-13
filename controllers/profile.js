@@ -26,11 +26,10 @@ exports.doEdit = (req, res) => {
 	const options = {
 		hostname: 'pebble-pickup.herokuapp.com',
 		path: '/tweets',
-		method: 'GET'
 	}
 
 	console.log('checkbox is: ', req.body.pickupBox)
-
+	//Nodejs. (z.d.). Making HTTP requests with Node.js. Geraadpleegd op 13 april 2020, van https://nodejs.dev/making-http-requests-with-nodejs
 	//if checkbox has been checked, connect to api to choose random pickupline
 	if (randomCheck) {
 		//make connection with API
