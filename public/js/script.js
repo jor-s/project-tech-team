@@ -1,40 +1,78 @@
+//select elements that already exist in the HTML
 let personalia = document.querySelector('.personalia')
 let pickupline = document.querySelector('.pickupline')
 let uploadPicture = document.querySelector('.uploadPicture')
 let saveButton = document.querySelector('.saveButton')
-let progressbar = document.querySelector('.progressbar')
-let progress1 = document.querySelector('.progress1')
-let progress2 = document.querySelector('.progress2')
-let progress3 = document.querySelector('.progress3')
 let done = document.querySelector('.done')
 
-let counter = 0
+//make the elements for progressive disclosure
+let selectForm = document.getElementById('ff')
+let formStyle = document.getElementById('formStyle')
 
-let nextButton = document.querySelector('.next')
-nextButton.addEventListener('click', ()=> {
+let progressbar = document.createElement('div')
+let progress1 = document.createElement('div')
+let progress2 = document.createElement('div')
+let progress3 = document.createElement('div')
+
+let backButton = document.createElement('button')
+let nextButton = document.createElement('button')
+
+//add text to buttons
+let backText = document.createTextNode('Back')
+let nextText = document.createTextNode('Next')
+
+backButton.appendChild(backText)
+nextButton.appendChild(nextText)
+
+//assign classes to added elements
+progressbar.setAttribute('class', 'progressbar')
+progress1.setAttribute('class', 'progress1 hidden')
+progress2.setAttribute('class', 'progress2 hidden')
+progress3.setAttribute('class', 'progress3 hidden')
+
+backButton.setAttribute('class', 'back button hidden')
+nextButton.setAttribute('class', 'next button hidden')
+
+//checks if elements exist in the HTML
+if (progressbar != null) {
+	selectForm.insertBefore(progressbar, selectForm.childNodes[0])
+	progressbar.appendChild(progress1)
+	progressbar.appendChild(progress2)
+	progressbar.appendChild(progress3)
+
+	formStyle.insertBefore(backButton, formStyle.childNodes[2])
+	formStyle.insertBefore(nextButton, formStyle.childNodes[3])
+}
+
+let next = document.querySelector('.next')
+next.addEventListener('click', () => {
 	counter++
 	console.log(counter)
 	cases()
-	if(counter > 3){
+	if (counter > 3) {
 		counter--
 	}
 })
 
-let backButton = document.querySelector('.back')
-backButton.addEventListener('click', ()=> {
+let back = document.querySelector('.back')
+back.addEventListener('click', () => {
 	counter--
 	console.log(counter)
 	cases()
-	if(counter == -1){
+	if (counter == -1) {
 		counter++
 	}
 })
+
+
+let counter = 0
+
 
 console.log(counter)
 
 cases()
 
-function cases(){
+function cases() {
 
 	switch (counter) {
 	case 0:
