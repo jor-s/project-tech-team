@@ -34,7 +34,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 	pass: process.env.DB_PASS,
 	useNewUrlParser: 'true',
 	useUnifiedTopology: 'true',
-	useCreateIndex: 'true'
+	useCreateIndex: 'true',
+	useFindAndModify: false
 })
 
 
@@ -48,9 +49,6 @@ app.use((req, res, next) => {
 	res.locals.error = req.flash('error')
 	next()
 })
-
-
-
 
 
 db.on('error', console.error.bind(console, 'connection error:'))
