@@ -15,8 +15,6 @@ exports.doRegister = (req, res) => {
 
 	const errors = validationResult(req).mapped()
 	if (Object.keys(errors).length>0) {
-		console.log(req.body.password)
-		console.log(req.body.password2)
 		res.render('register', {
 			user: req.user,
 			errors: errors
@@ -35,8 +33,6 @@ exports.doRegister = (req, res) => {
 					if (err) {
 						return err(err)
 					} else {
-						console.log(req.body.password)
-						console.log(req.body.password2)
 						console.log('registerd info: ' + newUser)
 						console.log('has been added')
 						res.render('login')
