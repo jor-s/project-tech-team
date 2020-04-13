@@ -51,9 +51,6 @@ app.use((req, res, next) => {
 })
 
 
-
-
-
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
 	console.log('DATABASE CONNECTED FOR SURE')
