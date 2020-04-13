@@ -61,9 +61,8 @@ exports.doEdit = (req, res) => {
 						preferences: userPreference,
 						hobby: userHobby
 					}
-				}, {
-					useFindAndModify: false
-				}, function (err) {
+				},
+				function (err) {
 					if (err) {
 						console.log('something went wrong when i tried to update: ', err)
 					} else {
