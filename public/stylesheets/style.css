@@ -37,8 +37,7 @@ section {
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+	width: 100%;
 }
 
 h2 {
@@ -406,7 +405,10 @@ article ul {
 	flex-direction: row;
 	justify-content: space-around;
 }
+#profile-info img {
+	max-width: 5em;
 
+}
 /* Mobile Nav */
 @media (max-width: 858px) {
 	nav {

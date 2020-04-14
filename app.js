@@ -6,9 +6,10 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const passport = require('./config/passport')
 const flash = require('connect-flash')
-const port = 3000
+const path = require('path')
+const port = process.env.PORT
 const app = express()
-let db = mongoose.connection
+const db = mongoose.connection
 
 app
 	.use(session({
@@ -21,11 +22,12 @@ app
 	}))
 	.use(passport.initialize())
 	.use(passport.session())
-	.use('/public', express.static('public'))
+	.use('/public', express.static(path.join(__dirname,'public')))
 	.use(bodyParser.urlencoded({extended: true}))
+	.set('trust proxy', 1)
 	.use(routes)
+	.set('views', path.join(__dirname, 'views'))
 	.set('view engine', 'ejs')
-	.set('views', 'views')
 	.listen(port, () => console.log('Listening on port ' + port))
 
 //connect with database
@@ -38,10 +40,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 	useFindAndModify: false
 })
 
-
-// Connect flash
-app.use(flash())
-
 // Global variables
 app.use((req, res, next) => {
 	res.locals.success_msg = req.flash('success_msg')
@@ -50,8 +48,8 @@ app.use((req, res, next) => {
 	next()
 })
 
-
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
 	console.log('DATABASE CONNECTED FOR SURE')
 })
+
