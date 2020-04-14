@@ -40,9 +40,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 	useFindAndModify: false
 })
 
-// Connect flash
-app.use(flash())
-
 // Global variables
 app.use((req, res, next) => {
 	res.locals.success_msg = req.flash('success_msg')
@@ -55,3 +52,4 @@ db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
 	console.log('DATABASE CONNECTED FOR SURE')
 })
+

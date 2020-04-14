@@ -2,50 +2,53 @@
 
   <body class="container">
 
-    <%- include ('./partials/header.ejs') %>
+  	<%- include ('./partials/header.ejs') %>
 
-    <main>
+  	<main>
 
-      <section id="hero">
-        <h1>Likes</h1>
-      </section>
+  		<section id="hero">
+  			<h1>Likes</h1>
+  		</section>
 
-      <section class="page-content">
-        <h2>LIKES</h2>
+  		<section class="page-content">
+  			<h2>LIKES</h2>
 
-        <% for (var i = 0; i < user.likes.length; i++) { %>
-        <div class="card">
+  			<% for (var i = 0; i < user.likes.length; i++) { %>
+  			<div class="card">
+  				<figure>
+  					<img class="avatar" src="<%= user.likes[i].picture %> " alt="Placeholder image">
+  				</figure>
+  				<div class="card-content">
+  					<p> <%= user.likes[i].name %>, <b><%= user.likes[i].age %> </b>
+  					</p>
+  					<p> I'm Lookin for <%= user.likes[i].preferences %> </p>
+  					<p> So, tell me: <%= user.likes[i].pickupline %> </p>
+  					<p> My Hobby's are: <%= user.likes[i].hobby %> </p>
+  				</div>
+  			</div>
+  			<% } %>
+  		</section>
+  		<section>
+  			<h2>DISLIKES</h2>
+  			<% for (var i = 0; i < user.dislikes.length; i++) { %>
+  		<div class="card">
+  			<figure>
+  				<img class="avatar" src="<%= user.dislikes[i].picture %> " alt="Placeholder image">
+  			</figure>
+  			<div class="card-content">
+  				<p> <%= user.dislikes[i].name %>, <b><%= user.dislikes[i].age %> </b>
+  				</p>
+  				<p> I'm Lookin for <%= user.dislikes[i].preferences %> </p>
+  				<p> So, tell me: <%= user.dislikes[i].pickupline %> </p>
+  				<p> My Hobby's are: <%= user.dislikes[i].hobby %> </p>
+  			</div>
+  		</div>
+  			<% } %>
+  		</section>
+  	</main>
 
-          <img class="avatar" src="/img/<%= user.likes[i].picture %> " alt="Placeholder image">
-          <p> <%= user.likes[i].name %>, <bold><%= user.likes[i].age %> </bold>
-          </p>
-          <p> I'm Lookin for <%= user.likes[i].preference %> </p>
-          <p> So, tell me: <%= user.likes[i].pickupline %> </p>
-          <p> My Hobby's are: <%= user.likes[i].pickupline %> </p>
-          
-        </div>
-        <% } %>
-      </section>
-<section>
-  <h2>DISLIKES</h2>
-
-  <% for (var i = 0; i < user.dislikes.length; i++) { %>
-  <div class="card">
-
-    <img class="avatar" src="/img/<%= user.dislikes[i].picture %> " alt="Placeholder image">
-    <p> <%= user.dislikes[i].name %>, <bold><%= user.dislikes[i].age %> </bold>
-    </p>
-    <p> I'm Lookin for <%= user.dislikes[i].preference %> </p>
-    <p> So, tell me: <%= user.dislikes[i].pickupline %> </p>
-    <p> My Hobby's are: <%= user.dislikes[i].pickupline %> </p>
-
-  </div>
-  <% } %>
-</section>
-    </main>
-
-    <footer>
-      <%- include ('partials/footer.ejs') %>
-    </footer>
+  	<footer>
+  		<%- include ('partials/footer.ejs') %>
+  	</footer>
 
   </body>
