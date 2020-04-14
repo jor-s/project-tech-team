@@ -1,5 +1,4 @@
 <nav>
-
   <input type="checkbox" id="check">
 
   <label for="check" class="checkbtn">
@@ -10,13 +9,14 @@
 <% if (typeof user == 'object' && user) { %>
   <ul>
     <li><a href="/discover">Discover</a></li>
+    <li><a href="/likes">Likes</a></li>
     <li><a href="/profile">Profile</a></li>
-      <li><a href="/logout"><button type="button">Log out</button></a></li>
+    <li><a class="button" href="/logout">Logout</a></li>
    
   </ul>
 <% } else { %>
  <ul>
-  <li><button onclick="location.href='login'" type="button">Log in</button></li>
+  <li><a class="button" href="/login">Login</a></li>
  </ul>
 <% } %> 
 </nav>

@@ -2,10 +2,10 @@
 const User = require('../models/User')
 
 exports.users = async (req, res) => {
-	const thisUser = req.user;
+	const thisUser = req.user
 	let users = await findUsers(thisUser)
-	console.log(users);
-	res.render('recs',{
+	console.log(users)
+	res.render('discover',{
 		user:req.user,
 		users: users
 	})
@@ -22,7 +22,7 @@ exports.vote = async (req, res, next) => {
 		if (vote == 'dislike') {
 			await dislike(user, id)
 		}
-		res.redirect('/recs')
+		res.redirect('/discover')
 	} catch (err) {
 		next(err)
 	}
@@ -34,9 +34,9 @@ let findUsers = (thisUser) => {
 	object._id = {
 		$nin: ids
 	}
-	return new Promise((resolve, reject) => {
+	return new Promise(async(resolve, reject) => {
 		try {
-			let users = User.find(object)
+			let users = await User.find(object)
 			resolve(users)
 		} catch (err) {
 			reject(err)
@@ -47,13 +47,13 @@ let findUsers = (thisUser) => {
 let like = (userID, voteID) => {
 	return new Promise(async (resolve, reject) => {
 		try {
-			const user = await User.findById(userID);
+			const user = await User.findById(userID)
 			const checkDup = user.likes.includes(voteID)
 			if (!checkDup) {
-				user.likes.push(voteID);
+				user.likes.push(voteID)
 				await user.save()
 			}
-			resolve('has resolved');
+			resolve('has resolved')
 		} catch (err) {
 			reject(err)
 		}
@@ -66,10 +66,10 @@ let dislike = (userID, voteID) => {
 			const user = await User.findById(userID)
 			const checkDup = user.dislikes.includes(voteID)
 			if (!checkDup) {
-				user.dislikes.push(voteID);
+				user.dislikes.push(voteID)
 				await user.save()
 			}
-			resolve('has resolved');
+			resolve('has resolved')
 		} catch (err) {
 			reject(err)
 		}

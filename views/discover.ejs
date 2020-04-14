@@ -1,0 +1,40 @@
+<%- include ('./partials/head.ejs') %>
+
+<body class="container">
+
+  <%- include ('./partials/header.ejs') %>
+
+  <main>
+    <section id="hero">
+      <h1>Discover</h1>
+    </section>
+
+    <section class="page-content">
+      <div class="cards">
+        <% for (var i = 0; i < users.length; i++) { %>
+        <div class="card">
+          <figure>
+            <img class="avatar" src="<%= users[i].picture %> " alt="Profile pic">
+          </figure>
+          <div class="card-content">
+            <p> <%= users[i].name %>, <b><%= users[i].age %></b>
+            </p>
+            <p> I'm Lookin for <%= users[i].preferences %> </p>
+            <p> So, tell me: <%= users[i].pickupline %> </p>
+            <p> My Hobby's are: <%= users[i].hobby %> </p>
+            <form class="votes" action="/discover/vote/<%= users[i]._id %>" method="POST">
+              <button type='submit' class="vote dislike" name='vote' value="dislike"><i class="fas fa-ban"></i></button>
+              <button type='submit' class="vote like" name='vote' value="like"><i class="fas fa-heart"></i></button>
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <%- include ('partials/footer.ejs') %>
+  </footer>
+</body>
