@@ -25,6 +25,7 @@ For security we have used a few packages like:
 * Dotenv https://www.npmjs.com/package/dotenv
 * Bcrypt https://www.npmjs.com/package/passport
 * Ratelimiter https://www.npmjs.com/package/ratelimiter
+* Express-Validator https://www.npmjs.com/package/express-validator
 
 ## How to install
 
