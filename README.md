@@ -13,7 +13,30 @@ https://expressjs.com/en/starter/installing.html
 ### Mongoose
 Our database is based on Mongoose from MongoDB with a Json file structure.
 https://www.npmjs.com/package/mongoose
-![Capture](https://user-images.githubusercontent.com/45426792/78688575-b065be80-78f5-11ea-9803-fd0ccfdab39b.PNG)
+
+```javascript
+const UserSchema = new Schema({
+	name: String,
+	email: String,
+	age: Number,
+	password: String,
+	date: String,
+	preferences: String,
+	hobby: Array,
+	picture: String,
+	pickupline: String,
+	likes: {
+		type: [Schema.Types.ObjectId],
+		ref: 'User',
+		autopopulate: true
+	},
+	dislikes: {
+		type: [Schema.Types.ObjectId],
+		ref: 'User',
+		autopopulate: true
+	}
+})
+```
 
 ### EJS
 The template engine used for Lovebirds is EJS
