@@ -1,4 +1,4 @@
-# project-tech-team
+# project-tech-team <img src="public/img/logo.png" width="40" align="left" />
 ## Lovr - Where Lovebirds Meet
 ![unknown](https://user-images.githubusercontent.com/45426792/79072920-dd461700-7ce3-11ea-9f11-9d0620b3e80c.png)
 A dating app where people can meet each other and maybe become Lovebirds themselves.
