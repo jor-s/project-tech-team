@@ -29,6 +29,15 @@ For security we have used a few packages like:
 
 ## How to install
 
+Sample of .env
+
+```
+MONGODB_URI=uri
+DB_USER=username
+DB_PASS=password
+SECRET=secretkey
+```
+
 1. Open a terminal
 
 2. Clone this repo
