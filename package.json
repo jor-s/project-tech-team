@@ -1,6 +1,6 @@
 {
   "name": "project-tech-team",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "eslint": "node_modules/.bin/eslint app.js controllers/*.js public/js/*.js",
@@ -41,7 +41,6 @@
   ],
   "dependencies": {
     "bcrypt": "^4.0.1",
-    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "~4.16.1",
