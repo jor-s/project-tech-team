@@ -5,7 +5,6 @@ const routes = require('./routes')
 const mongoose = require('mongoose')
 const session = require('express-session')
 const passport = require('./config/passport')
-const flash = require('connect-flash')
 const path = require('path')
 const port = process.env.PORT
 const app = express()
@@ -38,14 +37,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 	useUnifiedTopology: 'true',
 	useCreateIndex: 'true',
 	useFindAndModify: false
-})
-
-// Global variables
-app.use((req, res, next) => {
-	res.locals.success_msg = req.flash('success_msg')
-	res.locals.error_msg = req.flash('error_msg')
-	res.locals.error = req.flash('error')
-	next()
 })
 
 db.on('error', console.error.bind(console, 'connection error:'))
