@@ -38,7 +38,7 @@ git clone https://github.com/sahitj001/project-tech-team
 
 3. Install node modules
 ```
-npm Install
+npm install
 ```
 
 4. Run the application
